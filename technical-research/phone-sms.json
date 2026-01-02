@@ -1,0 +1,64 @@
+{
+  "integration": "Phone/SMS",
+  "found": true,
+  "from_cache": false,
+  "generated": true,
+  "research_date": "2026-01-01T04:33:12.469Z",
+  "model_used": "gemini-3-flash-preview",
+  "integration_name": "Phone/SMS",
+  "has_native_n8n_node": false,
+  "native_node_name": null,
+  "auth_type": "API Key / Bearer Token",
+  "auth_complexity": "simple",
+  "auth_notes": "Most SMS gateways utilize a static API Key or Bearer Token passed via the 'Authorization' header. Some providers may require Basic Auth with an Account SID and Secret.",
+  "api_quality": "good",
+  "api_documentation_url": "https://www.textmagic.com/docs/api/",
+  "rate_limits": "Varies by provider; typically 1-10 requests per second (RPS) for REST API endpoints, often limited by the throughput of the underlying carrier route.",
+  "complexity_score": 6,
+  "complexity_tier": "moderate",
+  "estimated_hours": 12,
+  "webhook_support": true,
+  "gotchas": [
+    "Character encoding issues: Switching from GSM-7 to UCS-2 (for emojis/special chars) halves the character limit per segment.",
+    "Strict E.164 formatting requirements for international phone numbers.",
+    "Carrier filtering: Messages may be blocked without error if they contain certain keywords or lack proper 10DLC registration."
+  ],
+  "client_must_provide": [
+    "API Key or Credentials",
+    "Verified Sender ID or Purchased Virtual Number",
+    "Target Country/Region for compliance checking"
+  ],
+  "operations_available": [
+    "Send Outbound SMS",
+    "Check Delivery Status (DLR)",
+    "Retrieve Inbound SMS (MO)",
+    "Validate Phone Number (Lookup)",
+    "Manage Contact Lists"
+  ],
+  "similar_integrations": [
+    "Twilio",
+    "Vonage",
+    "MessageBird"
+  ],
+  "confidence": 0.9,
+  "research_notes": "Since no native node exists for generic SMS providers like TextMagic or SimpleTexting, the HTTP Request node is the primary tool. Users must manually configure POST requests with JSON payloads. To handle incoming messages or delivery receipts, a Webhook node must be exposed and the URL registered in the SMS provider's dashboard.",
+  "has_native_node": false,
+  "complexity": {
+    "score": 6,
+    "tier": "moderate",
+    "estimated_hours": 12
+  },
+  "effort_recommendation": {
+    "tier": "moderate",
+    "base_hours": 12,
+    "rationale": "Since no native node exists for generic SMS providers like TextMagic or SimpleTexting, the HTTP Request node is the primary tool. Users must manually configure POST requests with JSON payloads. To handle incoming messages or delivery receipts, a Webhook node must be exposed and the URL registered in the SMS provider's dashboard."
+  },
+  "freshness": {
+    "stale": false,
+    "days": 0,
+    "score": 0.65,
+    "reason": "auto-generated with node database"
+  },
+  "_database_match": null,
+  "_is_category": false
+}

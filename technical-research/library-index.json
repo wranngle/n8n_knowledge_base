@@ -1,0 +1,483 @@
+{
+  "version": "1.1.0",
+  "last_updated": "2026-01-01T04:33:12.472Z",
+  "description": "Index of technical research reports for integration estimation",
+  "research_files": {
+    "ringcentral-pipedrive": {
+      "file": "sync-ringcentral-calls-to-pipedrive.md",
+      "integrations": [
+        "ringcentral",
+        "pipedrive"
+      ],
+      "created_at": "2025-12-20",
+      "complexity_score": 6,
+      "effort_tier": "moderate",
+      "confidence": 0.85
+    },
+    "orthopedic-patient-intake": {
+      "file": "orthopedic-patient-intake-scheduling.md",
+      "integrations": [
+        "athenahealth",
+        "ringcentral",
+        "gmail",
+        "square",
+        "jotform",
+        "twilio",
+        "insurance"
+      ],
+      "created_at": "2025-12-27",
+      "complexity_score": 7,
+      "effort_tier": "complex",
+      "confidence": 0.85,
+      "business_process": "Patient Pre-Registration, Insurance Verification, Smart Scheduling",
+      "base_hours": 120
+    },
+    "voice-ai-agency-data-storage-infrastructure": {
+      "file": "voice-ai-agency-data-storage-infrastructure.md",
+      "integrations": [
+        "redis",
+        "postgres",
+        "supabase",
+        "airtable",
+        "google-sheets",
+        "elevenlabs",
+        "vapi",
+        "retell",
+        "gohighlevel",
+        "n8n",
+        "firebase",
+        "qdrant"
+      ],
+      "created_at": "2025-12-29",
+      "complexity_score": 5,
+      "effort_tier": "research",
+      "confidence": 0.87,
+      "business_process": "Voice AI agency data storage and infrastructure patterns",
+      "research_type": "infrastructure_analysis"
+    },
+    "proactive-inbound-receptionist-automation-2025-12-30": {
+      "file": "proactive-inbound-receptionist-automation-2025-12-30.md",
+      "integrations": [
+        "voip-pbx"
+      ],
+      "created_at": "2025-12-30",
+      "complexity_score": 3,
+      "effort_tier": "standard",
+      "confidence": 0.95,
+      "business_process": "Inbound Receptionist Automation",
+      "base_hours": 8,
+      "generated": true
+    },
+    "proactive-patient-intake-&-scheduling-workflow-2025-12-31": {
+      "file": "proactive-patient-intake-&-scheduling-workflow-2025-12-31.md",
+      "integrations": [
+        "phone-sms",
+        "forms",
+        "referrals",
+        "fax"
+      ],
+      "created_at": "2025-12-31",
+      "complexity_score": 5.3,
+      "effort_tier": "moderate",
+      "confidence": 0.85,
+      "business_process": "Patient Intake & Scheduling Workflow",
+      "base_hours": 48,
+      "generated": true
+    },
+    "proactive-general-operational-cost-management-2025-12-31": {
+      "file": "proactive-general-operational-cost-management-2025-12-31.md",
+      "integrations": [
+        "excel",
+        "manual-spreadsheets",
+        "outlook-gmail",
+        "legacy-accounting-software"
+      ],
+      "created_at": "2025-12-31",
+      "complexity_score": 3.8,
+      "effort_tier": "standard",
+      "confidence": 0.77,
+      "business_process": "General Operational Cost Management",
+      "base_hours": 40,
+      "generated": true
+    },
+    "proactive-executive-email-management-2025-12-31": {
+      "file": "proactive-executive-email-management-2025-12-31.md",
+      "integrations": [
+        "outlook-gmail-apple-mail"
+      ],
+      "created_at": "2025-12-31",
+      "complexity_score": 2,
+      "effort_tier": "standard",
+      "confidence": 0.7,
+      "business_process": "Executive Email Management",
+      "base_hours": 4,
+      "generated": true
+    },
+    "proactive-patient-intake-&-scheduling-automation-2025-12-31": {
+      "file": "proactive-patient-intake-&-scheduling-automation-2025-12-31.md",
+      "integrations": [
+        "api",
+        "athenahealth-ehr",
+        "phone-sms"
+      ],
+      "created_at": "2025-12-31",
+      "complexity_score": 5,
+      "effort_tier": "moderate",
+      "confidence": 0.83,
+      "business_process": "Patient Intake & Scheduling Automation",
+      "base_hours": 32,
+      "generated": true
+    },
+    "proactive-candidate-outbound-outreach-and-lead-management-2025-12-31": {
+      "file": "proactive-candidate-outbound-outreach-and-lead-management-2025-12-31.md",
+      "integrations": [
+        "salesforce",
+        "phone",
+        "data-enrichment",
+        "lusha",
+        "sourcing",
+        "linkedin-recruiter",
+        "indeed",
+        "tracking",
+        "outlook",
+        "calendly"
+      ],
+      "created_at": "2025-12-31",
+      "complexity_score": 5.1,
+      "effort_tier": "moderate",
+      "confidence": 0.84,
+      "business_process": "Candidate Outbound Outreach and Lead Management",
+      "base_hours": 114,
+      "generated": true
+    },
+    "proactive-ai-powered-lead-qualification-system-2025-12-31": {
+      "file": "proactive-ai-powered-lead-qualification-system-2025-12-31.md",
+      "integrations": [
+        "social",
+        "facebook-lead-ads",
+        "linkedin-lead-gen-forms",
+        "ads",
+        "google-ads",
+        "hubspot",
+        "communication",
+        "slack",
+        "hosting",
+        "digitalocean",
+        "ai",
+        "gpt-4"
+      ],
+      "created_at": "2025-12-31",
+      "complexity_score": 4.8,
+      "effort_tier": "moderate",
+      "confidence": 0.82,
+      "business_process": "AI-Powered Lead Qualification System",
+      "base_hours": 132,
+      "generated": true
+    },
+    "proactive-inbound-receptionist-automation-2025-12-31": {
+      "file": "proactive-inbound-receptionist-automation-2025-12-31.md",
+      "integrations": [
+        "voip-pbx"
+      ],
+      "created_at": "2025-12-31",
+      "complexity_score": 3,
+      "effort_tier": "standard",
+      "confidence": 0.95,
+      "business_process": "Inbound Receptionist Automation",
+      "base_hours": 8,
+      "generated": true
+    },
+    "proactive-legal-quote-generation-and-approval-2025-12-31": {
+      "file": "proactive-legal-quote-generation-and-approval-2025-12-31.md",
+      "integrations": [
+        "clio-manage",
+        "database",
+        "sql-server",
+        "templates",
+        "word"
+      ],
+      "created_at": "2025-12-31",
+      "complexity_score": 5.2,
+      "effort_tier": "moderate",
+      "confidence": 0.84,
+      "business_process": "Legal Quote Generation and Approval",
+      "base_hours": 84,
+      "generated": true
+    },
+    "proactive-patient-intake-&-scheduling-automation-2026-01-01": {
+      "file": "proactive-patient-intake-&-scheduling-automation-2026-01-01.md",
+      "integrations": [
+        "voip-sms",
+        "payment-processing"
+      ],
+      "created_at": "2026-01-01",
+      "complexity_score": 5,
+      "effort_tier": "moderate",
+      "confidence": 0.93,
+      "business_process": "Patient Intake & Scheduling Automation",
+      "base_hours": 24,
+      "generated": true
+    },
+    "proactive-patient-intake-&-scheduling-workflow-2026-01-01": {
+      "file": "proactive-patient-intake-&-scheduling-workflow-2026-01-01.md",
+      "integrations": [
+        "phone-sms"
+      ],
+      "created_at": "2026-01-01",
+      "complexity_score": 6,
+      "effort_tier": "moderate",
+      "confidence": 0.9,
+      "business_process": "Patient Intake & Scheduling Workflow",
+      "base_hours": 12,
+      "generated": true
+    }
+  },
+  "integration_lookup": {
+    "ringcentral": [
+      "ringcentral-pipedrive",
+      "orthopedic-patient-intake"
+    ],
+    "pipedrive": [
+      "ringcentral-pipedrive"
+    ],
+    "athenahealth": [
+      "orthopedic-patient-intake"
+    ],
+    "ehr": [
+      "orthopedic-patient-intake"
+    ],
+    "gmail": [
+      "orthopedic-patient-intake"
+    ],
+    "google": [
+      "orthopedic-patient-intake"
+    ],
+    "square": [
+      "orthopedic-patient-intake"
+    ],
+    "jotform": [
+      "orthopedic-patient-intake"
+    ],
+    "twilio": [
+      "orthopedic-patient-intake"
+    ],
+    "sms": [
+      "orthopedic-patient-intake"
+    ],
+    "insurance": [
+      "orthopedic-patient-intake"
+    ],
+    "healthcare": [
+      "orthopedic-patient-intake"
+    ],
+    "medical": [
+      "orthopedic-patient-intake"
+    ],
+    "hipaa": [
+      "orthopedic-patient-intake"
+    ],
+    "redis": [
+      "voice-ai-agency-data-storage-infrastructure"
+    ],
+    "postgres": [
+      "voice-ai-agency-data-storage-infrastructure"
+    ],
+    "supabase": [
+      "voice-ai-agency-data-storage-infrastructure"
+    ],
+    "airtable": [
+      "voice-ai-agency-data-storage-infrastructure"
+    ],
+    "google-sheets": [
+      "voice-ai-agency-data-storage-infrastructure"
+    ],
+    "elevenlabs": [
+      "voice-ai-agency-data-storage-infrastructure"
+    ],
+    "vapi": [
+      "voice-ai-agency-data-storage-infrastructure"
+    ],
+    "retell": [
+      "voice-ai-agency-data-storage-infrastructure"
+    ],
+    "gohighlevel": [
+      "voice-ai-agency-data-storage-infrastructure"
+    ],
+    "ghl": [
+      "voice-ai-agency-data-storage-infrastructure"
+    ],
+    "firebase": [
+      "voice-ai-agency-data-storage-infrastructure"
+    ],
+    "qdrant": [
+      "voice-ai-agency-data-storage-infrastructure"
+    ],
+    "voice-ai": [
+      "voice-ai-agency-data-storage-infrastructure"
+    ],
+    "latency": [
+      "voice-ai-agency-data-storage-infrastructure"
+    ],
+    "phone-system": [
+      "proactive-inbound-receptionist-automation-2025-12-30"
+    ],
+    "voip-pbx": [
+      "proactive-inbound-receptionist-automation-2025-12-30",
+      "proactive-inbound-receptionist-automation-2025-12-31"
+    ],
+    "customer-lookup": [
+      "proactive-inbound-receptionist-automation-2025-12-30"
+    ],
+    "crm": [
+      "proactive-inbound-receptionist-automation-2025-12-30"
+    ],
+    "scheduling": [
+      "proactive-inbound-receptionist-automation-2025-12-30"
+    ],
+    "calendar": [
+      "proactive-inbound-receptionist-automation-2025-12-30"
+    ],
+    "phone-sms": [
+      "proactive-patient-intake-&-scheduling-workflow-2025-12-31",
+      "proactive-patient-intake-&-scheduling-automation-2025-12-31",
+      "proactive-patient-intake-&-scheduling-workflow-2026-01-01"
+    ],
+    "email": [
+      "proactive-patient-intake-&-scheduling-workflow-2025-12-31"
+    ],
+    "payments": [
+      "proactive-patient-intake-&-scheduling-workflow-2025-12-31"
+    ],
+    "web-forms": [
+      "proactive-patient-intake-&-scheduling-workflow-2025-12-31"
+    ],
+    "excel": [
+      "proactive-general-operational-cost-management-2025-12-31"
+    ],
+    "manual-spreadsheets": [
+      "proactive-general-operational-cost-management-2025-12-31"
+    ],
+    "outlook-gmail": [
+      "proactive-general-operational-cost-management-2025-12-31"
+    ],
+    "legacy-accounting-software": [
+      "proactive-general-operational-cost-management-2025-12-31"
+    ],
+    "outlook-gmail-apple-mail": [
+      "proactive-executive-email-management-2025-12-31"
+    ],
+    "email-client": [
+      "proactive-executive-email-management-2025-12-31"
+    ],
+    "forms": [
+      "proactive-patient-intake-&-scheduling-workflow-2025-12-31"
+    ],
+    "referrals": [
+      "proactive-patient-intake-&-scheduling-workflow-2025-12-31"
+    ],
+    "fax": [
+      "proactive-patient-intake-&-scheduling-workflow-2025-12-31"
+    ],
+    "api": [
+      "proactive-patient-intake-&-scheduling-automation-2025-12-31"
+    ],
+    "athenahealth-ehr": [
+      "proactive-patient-intake-&-scheduling-automation-2025-12-31"
+    ],
+    "salesforce": [
+      "proactive-candidate-outbound-outreach-and-lead-management-2025-12-31"
+    ],
+    "phone": [
+      "proactive-candidate-outbound-outreach-and-lead-management-2025-12-31"
+    ],
+    "data-enrichment": [
+      "proactive-candidate-outbound-outreach-and-lead-management-2025-12-31"
+    ],
+    "lusha": [
+      "proactive-candidate-outbound-outreach-and-lead-management-2025-12-31"
+    ],
+    "sourcing": [
+      "proactive-candidate-outbound-outreach-and-lead-management-2025-12-31"
+    ],
+    "linkedin-recruiter": [
+      "proactive-candidate-outbound-outreach-and-lead-management-2025-12-31"
+    ],
+    "indeed": [
+      "proactive-candidate-outbound-outreach-and-lead-management-2025-12-31"
+    ],
+    "tracking": [
+      "proactive-candidate-outbound-outreach-and-lead-management-2025-12-31"
+    ],
+    "outlook": [
+      "proactive-candidate-outbound-outreach-and-lead-management-2025-12-31"
+    ],
+    "calendly": [
+      "proactive-candidate-outbound-outreach-and-lead-management-2025-12-31"
+    ],
+    "social": [
+      "proactive-ai-powered-lead-qualification-system-2025-12-31"
+    ],
+    "facebook-lead-ads": [
+      "proactive-ai-powered-lead-qualification-system-2025-12-31"
+    ],
+    "linkedin-lead-gen-forms": [
+      "proactive-ai-powered-lead-qualification-system-2025-12-31"
+    ],
+    "ads": [
+      "proactive-ai-powered-lead-qualification-system-2025-12-31"
+    ],
+    "google-ads": [
+      "proactive-ai-powered-lead-qualification-system-2025-12-31"
+    ],
+    "hubspot": [
+      "proactive-ai-powered-lead-qualification-system-2025-12-31"
+    ],
+    "communication": [
+      "proactive-ai-powered-lead-qualification-system-2025-12-31"
+    ],
+    "slack": [
+      "proactive-ai-powered-lead-qualification-system-2025-12-31"
+    ],
+    "hosting": [
+      "proactive-ai-powered-lead-qualification-system-2025-12-31"
+    ],
+    "digitalocean": [
+      "proactive-ai-powered-lead-qualification-system-2025-12-31"
+    ],
+    "ai": [
+      "proactive-ai-powered-lead-qualification-system-2025-12-31"
+    ],
+    "gpt-4": [
+      "proactive-ai-powered-lead-qualification-system-2025-12-31"
+    ],
+    "clio-manage": [
+      "proactive-legal-quote-generation-and-approval-2025-12-31"
+    ],
+    "database": [
+      "proactive-legal-quote-generation-and-approval-2025-12-31"
+    ],
+    "sql-server": [
+      "proactive-legal-quote-generation-and-approval-2025-12-31"
+    ],
+    "templates": [
+      "proactive-legal-quote-generation-and-approval-2025-12-31"
+    ],
+    "word": [
+      "proactive-legal-quote-generation-and-approval-2025-12-31"
+    ],
+    "voip-sms": [
+      "proactive-patient-intake-&-scheduling-automation-2026-01-01"
+    ],
+    "payment-processing": [
+      "proactive-patient-intake-&-scheduling-automation-2026-01-01"
+    ],
+    "web-intake": [
+      "proactive-patient-intake-&-scheduling-workflow-2026-01-01"
+    ]
+  },
+  "stats": {
+    "total_reports": 14,
+    "integrations_covered": 79,
+    "average_confidence": 0.85
+  }
+}
