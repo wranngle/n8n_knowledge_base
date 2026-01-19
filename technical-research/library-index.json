@@ -1,6 +1,6 @@
 {
   "version": "1.1.0",
-  "last_updated": "2026-01-01T04:33:12.472Z",
+  "last_updated": "2026-01-15T01:07:46.098Z",
   "description": "Index of technical research reports for integration estimation",
   "research_files": {
     "ringcentral-pipedrive": {
@@ -230,6 +230,614 @@
       "business_process": "Patient Intake & Scheduling Workflow",
       "base_hours": 12,
       "generated": true
+    },
+    "proactive-emergency-call-triage-and-maintenance-agreement-renewal-2026-01-11": {
+      "file": "proactive-emergency-call-triage-and-maintenance-agreement-renewal-2026-01-11.md",
+      "integrations": [
+        "field-service-crm-inventory",
+        "accounting",
+        "gps-fleet",
+        "financing"
+      ],
+      "created_at": "2026-01-11",
+      "complexity_score": 4.5,
+      "effort_tier": "moderate",
+      "confidence": 0.93,
+      "business_process": "Emergency Call Triage and Maintenance Agreement Renewal",
+      "base_hours": 38,
+      "generated": true
+    },
+    "proactive-patient-scheduling-and-treatment-coordination-2026-01-11": {
+      "file": "proactive-patient-scheduling-and-treatment-coordination-2026-01-11.md",
+      "integrations": [
+        "practice-management",
+        "phone-system-and-texting",
+        "claims-submission",
+        "digital-imaging",
+        "cad-cam",
+        "fee-schedules,-recalls",
+        "doctor-schedules"
+      ],
+      "created_at": "2026-01-11",
+      "complexity_score": 5.7,
+      "effort_tier": "moderate",
+      "confidence": 0.94,
+      "business_process": "Patient Scheduling and Treatment Coordination",
+      "base_hours": 94,
+      "generated": true
+    },
+    "proactive-patient-scheduling-and-treatment-coordination-2026-01-12": {
+      "file": "proactive-patient-scheduling-and-treatment-coordination-2026-01-12.md",
+      "integrations": [
+        "doctor-personal-schedules"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 7,
+      "effort_tier": "moderate",
+      "confidence": 0.85,
+      "business_process": "Patient Scheduling and Treatment Coordination",
+      "base_hours": 15,
+      "generated": true
+    },
+    "proactive-new-patient-intake-automation-2026-01-12": {
+      "file": "proactive-new-patient-intake-automation-2026-01-12.md",
+      "integrations": [
+        "insurance-verification",
+        "consent-forms",
+        "sms-reminders"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 4,
+      "effort_tier": "standard",
+      "confidence": 0.93,
+      "business_process": "New Patient Intake Automation",
+      "base_hours": 22,
+      "generated": true
+    },
+    "proactive-legal-document-intake-and-routing-2026-01-12": {
+      "file": "proactive-legal-document-intake-and-routing-2026-01-12.md",
+      "integrations": [
+        "dms",
+        "legacy-dms",
+        "conflict-checks"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 5.7,
+      "effort_tier": "moderate",
+      "confidence": 0.77,
+      "business_process": "Legal Document Intake and Routing",
+      "base_hours": 60,
+      "generated": true
+    },
+    "proactive-lead-qualification-and-property-matching-2026-01-12": {
+      "file": "proactive-lead-qualification-and-property-matching-2026-01-12.md",
+      "integrations": [
+        "gmail,-sheets,-calendar",
+        "lease-agreements"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 4,
+      "effort_tier": "standard",
+      "confidence": 0.8,
+      "business_process": "Lead Qualification and Property Matching",
+      "base_hours": 14,
+      "generated": true
+    },
+    "proactive-shipment-dispatch-and-driver-assignment-2026-01-12": {
+      "file": "proactive-shipment-dispatch-and-driver-assignment-2026-01-12.md",
+      "integrations": [
+        "tms",
+        "eld-gps",
+        "exception-tracking",
+        "load-planning",
+        "sms",
+        "safety",
+        "fuel",
+        "spot-market"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 4.3,
+      "effort_tier": "moderate",
+      "confidence": 0.87,
+      "business_process": "Shipment Dispatch and Driver Assignment",
+      "base_hours": 94,
+      "generated": true
+    },
+    "proactive-pet-appointment-scheduling-and-vaccination-reminder-system-2026-01-12": {
+      "file": "proactive-pet-appointment-scheduling-and-vaccination-reminder-system-2026-01-12.md",
+      "integrations": [
+        "pms",
+        "payment",
+        "inventory"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 4.7,
+      "effort_tier": "moderate",
+      "confidence": 0.87,
+      "business_process": "Pet Appointment Scheduling and Vaccination Reminder System",
+      "base_hours": 42,
+      "generated": true
+    },
+    "proactive-emergency-call-triage-and-maintenance-agreement-renewal-2026-01-12": {
+      "file": "proactive-emergency-call-triage-and-maintenance-agreement-renewal-2026-01-12.md",
+      "integrations": [
+        "field-service-crm"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 3,
+      "effort_tier": "standard",
+      "confidence": 1,
+      "business_process": "Emergency Call Triage and Maintenance Agreement Renewal",
+      "base_hours": 6,
+      "generated": true
+    },
+    "proactive-customer-inquiry-handling-2026-01-12": {
+      "file": "proactive-customer-inquiry-handling-2026-01-12.md",
+      "integrations": [
+        "enterprise-grade"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 4,
+      "effort_tier": "standard",
+      "confidence": 0.95,
+      "business_process": "Customer Inquiry Handling",
+      "base_hours": 8,
+      "generated": true
+    },
+    "proactive-customer-support-ticket-routing-2026-01-12": {
+      "file": "proactive-customer-support-ticket-routing-2026-01-12.md",
+      "integrations": [
+        "ticketing",
+        "chat",
+        "erp",
+        "knowledge-base",
+        "translation",
+        "analytics"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 4.2,
+      "effort_tier": "moderate",
+      "confidence": 0.81,
+      "business_process": "Customer Support Ticket Routing",
+      "base_hours": 62,
+      "generated": true
+    },
+    "proactive-customer-onboarding-and-support-2026-01-12": {
+      "file": "proactive-customer-onboarding-and-support-2026-01-12.md",
+      "integrations": [
+        "frontend",
+        "backend",
+        "auth"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 5,
+      "effort_tier": "moderate",
+      "confidence": 0.78,
+      "business_process": "Customer Onboarding and Support",
+      "base_hours": 56,
+      "generated": true
+    },
+    "proactive-candidate-sourcing-and-placement-workflow-2026-01-12": {
+      "file": "proactive-candidate-sourcing-and-placement-workflow-2026-01-12.md",
+      "integrations": [
+        "e-signature"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 5,
+      "effort_tier": "moderate",
+      "confidence": 0.7,
+      "business_process": "Candidate Sourcing and Placement Workflow",
+      "base_hours": 24,
+      "generated": true
+    },
+    "proactive-service-department-appointment-scheduling-and-follow-up-2026-01-12": {
+      "file": "proactive-service-department-appointment-scheduling-and-follow-up-2026-01-12.md",
+      "integrations": [
+        "parts",
+        "text"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 5.5,
+      "effort_tier": "moderate",
+      "confidence": 0.93,
+      "business_process": "Service Department Appointment Scheduling and Follow-up",
+      "base_hours": 16,
+      "generated": true
+    },
+    "proactive-subcontractor-coordination-and-daily-report-collection-2026-01-12": {
+      "file": "proactive-subcontractor-coordination-and-daily-report-collection-2026-01-12.md",
+      "integrations": [
+        "project-management-docs",
+        "time-tracking",
+        "safety-reporting"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 5,
+      "effort_tier": "moderate",
+      "confidence": 0.77,
+      "business_process": "Subcontractor Coordination and Daily Report Collection",
+      "base_hours": 56,
+      "generated": true
+    },
+    "proactive-member-engagement-and-personal-training-lead-qualification-2026-01-12": {
+      "file": "proactive-member-engagement-and-personal-training-lead-qualification-2026-01-12.md",
+      "integrations": [
+        "gym-management"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 5,
+      "effort_tier": "moderate",
+      "confidence": 0.9,
+      "business_process": "Member Engagement and Personal Training Lead Qualification",
+      "base_hours": 10,
+      "generated": true
+    },
+    "proactive-prescription-ready-notifications-and-refill-reminder-calls-2026-01-12": {
+      "file": "proactive-prescription-ready-notifications-and-refill-reminder-calls-2026-01-12.md",
+      "integrations": [
+        "pharmacy-system",
+        "phone-system-ivr",
+        "e-prescribing"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 7.3,
+      "effort_tier": "complex",
+      "confidence": 0.93,
+      "business_process": "Prescription Ready Notifications and Refill Reminder Calls",
+      "base_hours": 69,
+      "generated": true
+    },
+    "proactive-after-hours-call-handling-and-pre-need-consultation-scheduling-2026-01-12": {
+      "file": "proactive-after-hours-call-handling-and-pre-need-consultation-scheduling-2026-01-12.md",
+      "integrations": [
+        "funeral-management",
+        "website"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 6,
+      "effort_tier": "moderate",
+      "confidence": 0.88,
+      "business_process": "After-Hours Call Handling and Pre-Need Consultation Scheduling",
+      "base_hours": 24,
+      "generated": true
+    },
+    "proactive-appointment-booking-and-grooming-reminder-system-2026-01-12": {
+      "file": "proactive-appointment-booking-and-grooming-reminder-system-2026-01-12.md",
+      "integrations": [
+        "scheduling-crm",
+        "social-media",
+        "reviews"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 4.3,
+      "effort_tier": "moderate",
+      "confidence": 0.97,
+      "business_process": "Appointment Booking and Grooming Reminder System",
+      "base_hours": 24,
+      "generated": true
+    },
+    "proactive-quote-requests-and-scheduling-coordination-2026-01-12": {
+      "file": "proactive-quote-requests-and-scheduling-coordination-2026-01-12.md",
+      "integrations": [
+        "scheduling-crm-gps-payments"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 4,
+      "effort_tier": "standard",
+      "confidence": 0.95,
+      "business_process": "Quote Requests and Scheduling Coordination",
+      "base_hours": 6,
+      "generated": true
+    },
+    "proactive-membership-sales-and-appointment-booking-for-detailing-2026-01-12": {
+      "file": "proactive-membership-sales-and-appointment-booking-for-detailing-2026-01-12.md",
+      "integrations": [
+        "pos",
+        "membership-management",
+        "email-marketing"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 4.3,
+      "effort_tier": "moderate",
+      "confidence": 0.8,
+      "business_process": "Membership Sales and Appointment Booking for Detailing",
+      "base_hours": 38,
+      "generated": true
+    },
+    "proactive-order-processing-2026-01-12": {
+      "file": "proactive-order-processing-2026-01-12.md",
+      "integrations": [
+        "sap-or-oracle",
+        "voip",
+        "office-365-or-google",
+        "fedex-ups",
+        "sql"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 5.4,
+      "effort_tier": "moderate",
+      "confidence": 0.85,
+      "business_process": "Order Processing",
+      "base_hours": 86,
+      "generated": true
+    },
+    "proactive-patient-scheduling-and-follow-up-2026-01-12": {
+      "file": "proactive-patient-scheduling-and-follow-up-2026-01-12.md",
+      "integrations": [
+        "ehr",
+        "insurance"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 6,
+      "effort_tier": "moderate",
+      "confidence": 0.93,
+      "business_process": "Patient Scheduling and Follow-up",
+      "base_hours": 36,
+      "generated": true
+    },
+    "proactive-loan-application-processing-2026-01-12": {
+      "file": "proactive-loan-application-processing-2026-01-12.md",
+      "integrations": [
+        "los",
+        "operations",
+        "credit",
+        "esign"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 5.8,
+      "effort_tier": "moderate",
+      "confidence": 0.88,
+      "business_process": "Loan Application Processing",
+      "base_hours": 68,
+      "generated": true
+    },
+    "proactive-custom-cake-order-management-2026-01-12": {
+      "file": "proactive-custom-cake-order-management-2026-01-12.md",
+      "integrations": [
+        "notes"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 5,
+      "effort_tier": "moderate",
+      "confidence": 0.7,
+      "business_process": "Custom Cake Order Management",
+      "base_hours": 24,
+      "generated": true
+    },
+    "proactive-production-order-management-2026-01-12": {
+      "file": "proactive-production-order-management-2026-01-12.md",
+      "integrations": [
+        "rpg-iii",
+        "production-planning",
+        "scada",
+        "spreadsheets",
+        "email-legacy",
+        "api-gateway",
+        "edi"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 5.7,
+      "effort_tier": "moderate",
+      "confidence": 0.91,
+      "business_process": "Production Order Management",
+      "base_hours": 84,
+      "generated": true
+    },
+    "proactive-multi-currency-invoice-reconciliation-2026-01-12": {
+      "file": "proactive-multi-currency-invoice-reconciliation-2026-01-12.md",
+      "integrations": [
+        "legacy-erp",
+        "treasury",
+        "fx-platform",
+        "banking-api",
+        "storage"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 6.4,
+      "effort_tier": "moderate",
+      "confidence": 0.94,
+      "business_process": "Multi-Currency Invoice Reconciliation",
+      "base_hours": 68,
+      "generated": true
+    },
+    "proactive-last-mile-delivery-dispatch-and-exception-management-2026-01-12": {
+      "file": "proactive-last-mile-delivery-dispatch-and-exception-management-2026-01-12.md",
+      "integrations": [
+        "route-planning",
+        "customer-portal"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 5,
+      "effort_tier": "moderate",
+      "confidence": 0.83,
+      "business_process": "Last-Mile Delivery Dispatch and Exception Management",
+      "base_hours": 30,
+      "generated": true
+    },
+    "proactive-new-client-onboarding-and-tax-preparation-workflow-2026-01-12": {
+      "file": "proactive-new-client-onboarding-and-tax-preparation-workflow-2026-01-12.md",
+      "integrations": [
+        "tax-preparation-practice-management",
+        "document-exchange",
+        "electronic-signatures",
+        "internal-accounting",
+        "review-tracking"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 5.2,
+      "effort_tier": "moderate",
+      "confidence": 0.88,
+      "business_process": "New Client Onboarding and Tax Preparation Workflow",
+      "base_hours": 72,
+      "generated": true
+    },
+    "proactive-order-processing-and-fulfillment-automation-2026-01-12": {
+      "file": "proactive-order-processing-and-fulfillment-automation-2026-01-12.md",
+      "integrations": [
+        "e-commerce-store",
+        "marketplace",
+        "shipping",
+        "team-notifications",
+        "customer-support"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 5,
+      "effort_tier": "moderate",
+      "confidence": 0.79,
+      "business_process": "Order Processing and Fulfillment Automation",
+      "base_hours": 94,
+      "generated": true
+    },
+    "proactive-guest-reservation-and-check-in-management-2026-01-12": {
+      "file": "proactive-guest-reservation-and-check-in-management-2026-01-12.md",
+      "integrations": [
+        "ota",
+        "feedback",
+        "preferences-loyalty",
+        "internal",
+        "check-in"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 5,
+      "effort_tier": "moderate",
+      "confidence": 0.87,
+      "business_process": "Guest Reservation and Check-in Management",
+      "base_hours": 60,
+      "generated": true
+    },
+    "proactive-first-notice-of-loss-(fnol)-claims-intake-2026-01-12": {
+      "file": "proactive-first-notice-of-loss-(fnol)-claims-intake-2026-01-12.md",
+      "integrations": [
+        "claims-management",
+        "policy-admin",
+        "fraud-detection",
+        "estimation",
+        "it-ticketing"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 5.2,
+      "effort_tier": "moderate",
+      "confidence": 0.87,
+      "business_process": "First Notice of Loss (FNOL) Claims Intake",
+      "base_hours": 70,
+      "generated": true
+    },
+    "proactive-custom-order-processing-and-production-scheduling-2026-01-12": {
+      "file": "proactive-custom-order-processing-and-production-scheduling-2026-01-12.md",
+      "integrations": [
+        "engineering-drawings",
+        "qms",
+        "shipping-labels",
+        "document-management",
+        "reporting"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 5.2,
+      "effort_tier": "moderate",
+      "confidence": 0.83,
+      "business_process": "Custom Order Processing and Production Scheduling",
+      "base_hours": 76,
+      "generated": true
+    },
+    "proactive-inventory-management-and-supplier-ordering-2026-01-12": {
+      "file": "proactive-inventory-management-and-supplier-ordering-2026-01-12.md",
+      "integrations": [
+        "sales-data",
+        "accounting-inventory",
+        "supplier-ordering",
+        "inventory-counts-calculations",
+        "cross-location-sharing",
+        "labor-data",
+        "delivery-orders",
+        "legacy-accounting"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 5.4,
+      "effort_tier": "moderate",
+      "confidence": 0.84,
+      "business_process": "Inventory Management and Supplier Ordering",
+      "base_hours": 129,
+      "generated": true
+    },
+    "proactive-inbound-call-handling-and-reception-2026-01-12": {
+      "file": "proactive-inbound-call-handling-and-reception-2026-01-12.md",
+      "integrations": [
+        "pbx",
+        "customer-records"
+      ],
+      "created_at": "2026-01-12",
+      "complexity_score": 4,
+      "effort_tier": "standard",
+      "confidence": 0.85,
+      "business_process": "Inbound Call Handling and Reception",
+      "base_hours": 30,
+      "generated": true
+    },
+    "proactive-emergency-call-triage-and-maintenance-agreement-renewal-2026-01-13": {
+      "file": "proactive-emergency-call-triage-and-maintenance-agreement-renewal-2026-01-13.md",
+      "integrations": [
+        "fsm-crm"
+      ],
+      "created_at": "2026-01-13",
+      "complexity_score": 4,
+      "effort_tier": "standard",
+      "confidence": 1,
+      "business_process": "Emergency Call Triage and Maintenance Agreement Renewal",
+      "base_hours": 10,
+      "generated": true
+    },
+    "proactive-support-ticket-management-and-lead-triage-2026-01-13": {
+      "file": "proactive-support-ticket-management-and-lead-triage-2026-01-13.md",
+      "integrations": [
+        "listings"
+      ],
+      "created_at": "2026-01-13",
+      "complexity_score": 5,
+      "effort_tier": "moderate",
+      "confidence": 0.7,
+      "business_process": "Support Ticket Management and Lead Triage",
+      "base_hours": 24,
+      "generated": true
+    },
+    "proactive-patient-scheduling-and-treatment-coordination-2026-01-13": {
+      "file": "proactive-patient-scheduling-and-treatment-coordination-2026-01-13.md",
+      "integrations": [
+        "claims-eligibility",
+        "fee-schedules-recalls"
+      ],
+      "created_at": "2026-01-13",
+      "complexity_score": 7.5,
+      "effort_tier": "complex",
+      "confidence": 0.95,
+      "business_process": "Patient Scheduling and Treatment Coordination",
+      "base_hours": 36,
+      "generated": true
+    },
+    "proactive-pet-appointment-scheduling-and-vaccination-reminder-system-2026-01-15": {
+      "file": "proactive-pet-appointment-scheduling-and-vaccination-reminder-system-2026-01-15.md",
+      "integrations": [
+        "practice-management-system"
+      ],
+      "created_at": "2026-01-15",
+      "complexity_score": 4,
+      "effort_tier": "standard",
+      "confidence": 0.95,
+      "business_process": "Pet Appointment Scheduling and Vaccination Reminder System",
+      "base_hours": 8,
+      "generated": true
+    },
+    "proactive-patient-scheduling-and-treatment-coordination-2026-01-15": {
+      "file": "proactive-patient-scheduling-and-treatment-coordination-2026-01-15.md",
+      "integrations": [
+        "tracking-recalls"
+      ],
+      "created_at": "2026-01-15",
+      "complexity_score": 3,
+      "effort_tier": "standard",
+      "confidence": 0.9,
+      "business_process": "Patient Scheduling and Treatment Coordination",
+      "base_hours": 6,
+      "generated": true
     }
   },
   "integration_lookup": {
@@ -244,7 +852,8 @@
       "orthopedic-patient-intake"
     ],
     "ehr": [
-      "orthopedic-patient-intake"
+      "orthopedic-patient-intake",
+      "proactive-patient-scheduling-and-follow-up-2026-01-12"
     ],
     "gmail": [
       "orthopedic-patient-intake"
@@ -262,10 +871,12 @@
       "orthopedic-patient-intake"
     ],
     "sms": [
-      "orthopedic-patient-intake"
+      "orthopedic-patient-intake",
+      "proactive-shipment-dispatch-and-driver-assignment-2026-01-12"
     ],
     "insurance": [
-      "orthopedic-patient-intake"
+      "orthopedic-patient-intake",
+      "proactive-patient-scheduling-and-follow-up-2026-01-12"
     ],
     "healthcare": [
       "orthopedic-patient-intake"
@@ -340,7 +951,8 @@
     "phone-sms": [
       "proactive-patient-intake-&-scheduling-workflow-2025-12-31",
       "proactive-patient-intake-&-scheduling-automation-2025-12-31",
-      "proactive-patient-intake-&-scheduling-workflow-2026-01-01"
+      "proactive-patient-intake-&-scheduling-workflow-2026-01-01",
+      "proactive-patient-scheduling-and-treatment-coordination-2026-01-13"
     ],
     "email": [
       "proactive-patient-intake-&-scheduling-workflow-2025-12-31"
@@ -473,11 +1085,464 @@
     ],
     "web-intake": [
       "proactive-patient-intake-&-scheduling-workflow-2026-01-01"
+    ],
+    "field-service-crm-inventory": [
+      "proactive-emergency-call-triage-and-maintenance-agreement-renewal-2026-01-11"
+    ],
+    "accounting": [
+      "proactive-emergency-call-triage-and-maintenance-agreement-renewal-2026-01-11"
+    ],
+    "gps-fleet": [
+      "proactive-emergency-call-triage-and-maintenance-agreement-renewal-2026-01-11"
+    ],
+    "financing": [
+      "proactive-emergency-call-triage-and-maintenance-agreement-renewal-2026-01-11"
+    ],
+    "practice-management": [
+      "proactive-patient-scheduling-and-treatment-coordination-2026-01-11"
+    ],
+    "phone-system-and-texting": [
+      "proactive-patient-scheduling-and-treatment-coordination-2026-01-11"
+    ],
+    "claims-submission": [
+      "proactive-patient-scheduling-and-treatment-coordination-2026-01-11"
+    ],
+    "digital-imaging": [
+      "proactive-patient-scheduling-and-treatment-coordination-2026-01-11"
+    ],
+    "cad-cam": [
+      "proactive-patient-scheduling-and-treatment-coordination-2026-01-11"
+    ],
+    "fee-schedules,-recalls": [
+      "proactive-patient-scheduling-and-treatment-coordination-2026-01-11"
+    ],
+    "doctor-schedules": [
+      "proactive-patient-scheduling-and-treatment-coordination-2026-01-11"
+    ],
+    "phone-and-sms": [
+      "proactive-patient-scheduling-and-treatment-coordination-2026-01-12"
+    ],
+    "fee-schedules-and-tracking": [
+      "proactive-patient-scheduling-and-treatment-coordination-2026-01-12"
+    ],
+    "insurance-verification": [
+      "proactive-new-patient-intake-automation-2026-01-12"
+    ],
+    "consent-forms": [
+      "proactive-new-patient-intake-automation-2026-01-12"
+    ],
+    "sms-reminders": [
+      "proactive-new-patient-intake-automation-2026-01-12"
+    ],
+    "dms": [
+      "proactive-legal-document-intake-and-routing-2026-01-12"
+    ],
+    "legacy-dms": [
+      "proactive-legal-document-intake-and-routing-2026-01-12"
+    ],
+    "conflict-checks": [
+      "proactive-legal-document-intake-and-routing-2026-01-12"
+    ],
+    "property-management": [
+      "proactive-lead-qualification-and-property-matching-2026-01-12"
+    ],
+    "lead-manager": [
+      "proactive-lead-qualification-and-property-matching-2026-01-12"
+    ],
+    "spark-api": [
+      "proactive-lead-qualification-and-property-matching-2026-01-12"
+    ],
+    "marketing": [
+      "proactive-lead-qualification-and-property-matching-2026-01-12"
+    ],
+    "gmail-sheets": [
+      "proactive-lead-qualification-and-property-matching-2026-01-12"
+    ],
+    "leasing": [
+      "proactive-lead-qualification-and-property-matching-2026-01-12"
+    ],
+    "tms": [
+      "proactive-shipment-dispatch-and-driver-assignment-2026-01-12"
+    ],
+    "eld-gps": [
+      "proactive-shipment-dispatch-and-driver-assignment-2026-01-12"
+    ],
+    "exception-tracking": [
+      "proactive-shipment-dispatch-and-driver-assignment-2026-01-12"
+    ],
+    "load-planning": [
+      "proactive-shipment-dispatch-and-driver-assignment-2026-01-12"
+    ],
+    "safety": [
+      "proactive-shipment-dispatch-and-driver-assignment-2026-01-12"
+    ],
+    "fuel": [
+      "proactive-shipment-dispatch-and-driver-assignment-2026-01-12"
+    ],
+    "spot-market": [
+      "proactive-shipment-dispatch-and-driver-assignment-2026-01-12"
+    ],
+    "pms": [
+      "proactive-pet-appointment-scheduling-and-vaccination-reminder-system-2026-01-12"
+    ],
+    "payment": [
+      "proactive-pet-appointment-scheduling-and-vaccination-reminder-system-2026-01-12"
+    ],
+    "inventory": [
+      "proactive-pet-appointment-scheduling-and-vaccination-reminder-system-2026-01-12"
+    ],
+    "field-service-crm": [
+      "proactive-emergency-call-triage-and-maintenance-agreement-renewal-2026-01-12"
+    ],
+    "something-enterprise-grade": [
+      "proactive-customer-inquiry-handling-2026-01-12"
+    ],
+    "industry-standard": [
+      "proactive-customer-inquiry-handling-2026-01-12"
+    ],
+    "the-usual": [
+      "proactive-customer-inquiry-handling-2026-01-12"
+    ],
+    "ticketing": [
+      "proactive-customer-support-ticket-routing-2026-01-12"
+    ],
+    "chat": [
+      "proactive-customer-support-ticket-routing-2026-01-12"
+    ],
+    "erp": [
+      "proactive-customer-support-ticket-routing-2026-01-12"
+    ],
+    "knowledge-base": [
+      "proactive-customer-support-ticket-routing-2026-01-12"
+    ],
+    "translation": [
+      "proactive-customer-support-ticket-routing-2026-01-12"
+    ],
+    "analytics": [
+      "proactive-customer-support-ticket-routing-2026-01-12"
+    ],
+    "frontend": [
+      "proactive-customer-onboarding-and-support-2026-01-12"
+    ],
+    "backend": [
+      "proactive-customer-onboarding-and-support-2026-01-12"
+    ],
+    "auth": [
+      "proactive-customer-onboarding-and-support-2026-01-12"
+    ],
+    "ats": [
+      "proactive-candidate-sourcing-and-placement-workflow-2026-01-12"
+    ],
+    "contact-data": [
+      "proactive-candidate-sourcing-and-placement-workflow-2026-01-12"
+    ],
+    "offer-letters": [
+      "proactive-candidate-sourcing-and-placement-workflow-2026-01-12"
+    ],
+    "background-checks": [
+      "proactive-candidate-sourcing-and-placement-workflow-2026-01-12"
+    ],
+    "internal-communication": [
+      "proactive-candidate-sourcing-and-placement-workflow-2026-01-12"
+    ],
+    "document-storage": [
+      "proactive-candidate-sourcing-and-placement-workflow-2026-01-12"
+    ],
+    "payroll": [
+      "proactive-candidate-sourcing-and-placement-workflow-2026-01-12"
+    ],
+    "parts": [
+      "proactive-service-department-appointment-scheduling-and-follow-up-2026-01-12"
+    ],
+    "text": [
+      "proactive-service-department-appointment-scheduling-and-follow-up-2026-01-12"
+    ],
+    "project-management-docs": [
+      "proactive-subcontractor-coordination-and-daily-report-collection-2026-01-12"
+    ],
+    "time-tracking": [
+      "proactive-subcontractor-coordination-and-daily-report-collection-2026-01-12"
+    ],
+    "safety-reporting": [
+      "proactive-subcontractor-coordination-and-daily-report-collection-2026-01-12"
+    ],
+    "gym-management": [
+      "proactive-member-engagement-and-personal-training-lead-qualification-2026-01-12"
+    ],
+    "pharmacy-system": [
+      "proactive-prescription-ready-notifications-and-refill-reminder-calls-2026-01-12"
+    ],
+    "phone-system-ivr": [
+      "proactive-prescription-ready-notifications-and-refill-reminder-calls-2026-01-12"
+    ],
+    "e-prescribing": [
+      "proactive-prescription-ready-notifications-and-refill-reminder-calls-2026-01-12"
+    ],
+    "funeral-management": [
+      "proactive-after-hours-call-handling-and-pre-need-consultation-scheduling-2026-01-12"
+    ],
+    "website": [
+      "proactive-after-hours-call-handling-and-pre-need-consultation-scheduling-2026-01-12"
+    ],
+    "scheduling-crm": [
+      "proactive-appointment-booking-and-grooming-reminder-system-2026-01-12"
+    ],
+    "social-media": [
+      "proactive-appointment-booking-and-grooming-reminder-system-2026-01-12"
+    ],
+    "reviews": [
+      "proactive-appointment-booking-and-grooming-reminder-system-2026-01-12"
+    ],
+    "scheduling-crm-gps-payments": [
+      "proactive-quote-requests-and-scheduling-coordination-2026-01-12"
+    ],
+    "pos": [
+      "proactive-membership-sales-and-appointment-booking-for-detailing-2026-01-12"
+    ],
+    "membership-management": [
+      "proactive-membership-sales-and-appointment-booking-for-detailing-2026-01-12"
+    ],
+    "email-marketing": [
+      "proactive-membership-sales-and-appointment-booking-for-detailing-2026-01-12"
+    ],
+    "sap-or-oracle": [
+      "proactive-order-processing-2026-01-12"
+    ],
+    "voip": [
+      "proactive-order-processing-2026-01-12"
+    ],
+    "office-365-or-google": [
+      "proactive-order-processing-2026-01-12"
+    ],
+    "fedex-ups": [
+      "proactive-order-processing-2026-01-12"
+    ],
+    "sql": [
+      "proactive-order-processing-2026-01-12"
+    ],
+    "enterprise-grade": [
+      "proactive-customer-inquiry-handling-2026-01-12"
+    ],
+    "los": [
+      "proactive-loan-application-processing-2026-01-12"
+    ],
+    "operations": [
+      "proactive-loan-application-processing-2026-01-12"
+    ],
+    "credit": [
+      "proactive-loan-application-processing-2026-01-12"
+    ],
+    "esign": [
+      "proactive-loan-application-processing-2026-01-12"
+    ],
+    "notes": [
+      "proactive-custom-cake-order-management-2026-01-12"
+    ],
+    "rpg-iii": [
+      "proactive-production-order-management-2026-01-12"
+    ],
+    "production-planning": [
+      "proactive-production-order-management-2026-01-12"
+    ],
+    "scada": [
+      "proactive-production-order-management-2026-01-12"
+    ],
+    "spreadsheets": [
+      "proactive-production-order-management-2026-01-12"
+    ],
+    "email-legacy": [
+      "proactive-production-order-management-2026-01-12"
+    ],
+    "api-gateway": [
+      "proactive-production-order-management-2026-01-12"
+    ],
+    "edi": [
+      "proactive-production-order-management-2026-01-12"
+    ],
+    "legacy-erp": [
+      "proactive-multi-currency-invoice-reconciliation-2026-01-12"
+    ],
+    "treasury": [
+      "proactive-multi-currency-invoice-reconciliation-2026-01-12"
+    ],
+    "fx-platform": [
+      "proactive-multi-currency-invoice-reconciliation-2026-01-12"
+    ],
+    "banking-api": [
+      "proactive-multi-currency-invoice-reconciliation-2026-01-12"
+    ],
+    "storage": [
+      "proactive-multi-currency-invoice-reconciliation-2026-01-12"
+    ],
+    "route-planning": [
+      "proactive-last-mile-delivery-dispatch-and-exception-management-2026-01-12"
+    ],
+    "customer-portal": [
+      "proactive-last-mile-delivery-dispatch-and-exception-management-2026-01-12"
+    ],
+    "tax-preparation-practice-management": [
+      "proactive-new-client-onboarding-and-tax-preparation-workflow-2026-01-12"
+    ],
+    "document-exchange": [
+      "proactive-new-client-onboarding-and-tax-preparation-workflow-2026-01-12"
+    ],
+    "electronic-signatures": [
+      "proactive-new-client-onboarding-and-tax-preparation-workflow-2026-01-12"
+    ],
+    "internal-accounting": [
+      "proactive-new-client-onboarding-and-tax-preparation-workflow-2026-01-12"
+    ],
+    "review-tracking": [
+      "proactive-new-client-onboarding-and-tax-preparation-workflow-2026-01-12"
+    ],
+    "phone-text": [
+      "proactive-patient-scheduling-and-treatment-coordination-2026-01-12"
+    ],
+    "claims": [
+      "proactive-patient-scheduling-and-treatment-coordination-2026-01-12"
+    ],
+    "imaging": [
+      "proactive-patient-scheduling-and-treatment-coordination-2026-01-12"
+    ],
+    "tracking-fee-schedules": [
+      "proactive-patient-scheduling-and-treatment-coordination-2026-01-12"
+    ],
+    "personal-schedules": [
+      "proactive-patient-scheduling-and-treatment-coordination-2026-01-12"
+    ],
+    "e-commerce-store": [
+      "proactive-order-processing-and-fulfillment-automation-2026-01-12"
+    ],
+    "marketplace": [
+      "proactive-order-processing-and-fulfillment-automation-2026-01-12"
+    ],
+    "shipping": [
+      "proactive-order-processing-and-fulfillment-automation-2026-01-12"
+    ],
+    "team-notifications": [
+      "proactive-order-processing-and-fulfillment-automation-2026-01-12"
+    ],
+    "customer-support": [
+      "proactive-order-processing-and-fulfillment-automation-2026-01-12"
+    ],
+    "ota": [
+      "proactive-guest-reservation-and-check-in-management-2026-01-12"
+    ],
+    "feedback": [
+      "proactive-guest-reservation-and-check-in-management-2026-01-12"
+    ],
+    "preferences-loyalty": [
+      "proactive-guest-reservation-and-check-in-management-2026-01-12"
+    ],
+    "internal": [
+      "proactive-guest-reservation-and-check-in-management-2026-01-12"
+    ],
+    "check-in": [
+      "proactive-guest-reservation-and-check-in-management-2026-01-12"
+    ],
+    "claims-management": [
+      "proactive-first-notice-of-loss-(fnol)-claims-intake-2026-01-12"
+    ],
+    "policy-admin": [
+      "proactive-first-notice-of-loss-(fnol)-claims-intake-2026-01-12"
+    ],
+    "fraud-detection": [
+      "proactive-first-notice-of-loss-(fnol)-claims-intake-2026-01-12"
+    ],
+    "estimation": [
+      "proactive-first-notice-of-loss-(fnol)-claims-intake-2026-01-12"
+    ],
+    "it-ticketing": [
+      "proactive-first-notice-of-loss-(fnol)-claims-intake-2026-01-12"
+    ],
+    "engineering-drawings": [
+      "proactive-custom-order-processing-and-production-scheduling-2026-01-12"
+    ],
+    "qms": [
+      "proactive-custom-order-processing-and-production-scheduling-2026-01-12"
+    ],
+    "shipping-labels": [
+      "proactive-custom-order-processing-and-production-scheduling-2026-01-12"
+    ],
+    "document-management": [
+      "proactive-custom-order-processing-and-production-scheduling-2026-01-12"
+    ],
+    "reporting": [
+      "proactive-custom-order-processing-and-production-scheduling-2026-01-12"
+    ],
+    "gmail,-sheets,-calendar": [
+      "proactive-lead-qualification-and-property-matching-2026-01-12"
+    ],
+    "lease-agreements": [
+      "proactive-lead-qualification-and-property-matching-2026-01-12"
+    ],
+    "e-signature": [
+      "proactive-candidate-sourcing-and-placement-workflow-2026-01-12"
+    ],
+    "sales-data": [
+      "proactive-inventory-management-and-supplier-ordering-2026-01-12"
+    ],
+    "accounting-inventory": [
+      "proactive-inventory-management-and-supplier-ordering-2026-01-12"
+    ],
+    "supplier-ordering": [
+      "proactive-inventory-management-and-supplier-ordering-2026-01-12"
+    ],
+    "inventory-counts-calculations": [
+      "proactive-inventory-management-and-supplier-ordering-2026-01-12"
+    ],
+    "cross-location-sharing": [
+      "proactive-inventory-management-and-supplier-ordering-2026-01-12"
+    ],
+    "labor-data": [
+      "proactive-inventory-management-and-supplier-ordering-2026-01-12"
+    ],
+    "delivery-orders": [
+      "proactive-inventory-management-and-supplier-ordering-2026-01-12"
+    ],
+    "legacy-accounting": [
+      "proactive-inventory-management-and-supplier-ordering-2026-01-12"
+    ],
+    "personal": [
+      "proactive-patient-scheduling-and-treatment-coordination-2026-01-12"
+    ],
+    "doctor-personal-schedules": [
+      "proactive-patient-scheduling-and-treatment-coordination-2026-01-12"
+    ],
+    "pbx": [
+      "proactive-inbound-call-handling-and-reception-2026-01-12"
+    ],
+    "customer-records": [
+      "proactive-inbound-call-handling-and-reception-2026-01-12"
+    ],
+    "fsm-crm": [
+      "proactive-emergency-call-triage-and-maintenance-agreement-renewal-2026-01-13"
+    ],
+    "listings": [
+      "proactive-support-ticket-management-and-lead-triage-2026-01-13"
+    ],
+    "claims-eligibility": [
+      "proactive-patient-scheduling-and-treatment-coordination-2026-01-13"
+    ],
+    "fee-schedules-recalls": [
+      "proactive-patient-scheduling-and-treatment-coordination-2026-01-13"
+    ],
+    "practice-management-system": [
+      "proactive-pet-appointment-scheduling-and-vaccination-reminder-system-2026-01-15"
+    ],
+    "practice-management-3-separate-servers": [
+      "proactive-patient-scheduling-and-treatment-coordination-2026-01-15"
+    ],
+    "phone-texting": [
+      "proactive-patient-scheduling-and-treatment-coordination-2026-01-15"
+    ],
+    "tracking-recalls": [
+      "proactive-patient-scheduling-and-treatment-coordination-2026-01-15"
     ]
   },
   "stats": {
-    "total_reports": 14,
-    "integrations_covered": 79,
-    "average_confidence": 0.85
+    "total_reports": 54,
+    "integrations_covered": 230,
+    "average_confidence": 0.87
   }
 }
