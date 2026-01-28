@@ -1,6 +1,6 @@
 {
   "version": "1.1.0",
-  "last_updated": "2026-01-15T01:07:46.098Z",
+  "last_updated": "2026-01-28T19:29:39.008Z",
   "description": "Index of technical research reports for integration estimation",
   "research_files": {
     "ringcentral-pipedrive": {
@@ -838,12 +838,222 @@
       "business_process": "Patient Scheduling and Treatment Coordination",
       "base_hours": 6,
       "generated": true
+    },
+    "proactive-appointment-scheduling-2026-01-21": {
+      "file": "proactive-appointment-scheduling-2026-01-21.md",
+      "integrations": [
+        "google-outlook",
+        "manual-entry"
+      ],
+      "created_at": "2026-01-21",
+      "complexity_score": 4,
+      "effort_tier": "standard",
+      "confidence": 0.7,
+      "business_process": "Appointment Scheduling",
+      "base_hours": 32,
+      "generated": true
+    },
+    "proactive-appointment-scheduling-2026-01-25": {
+      "file": "proactive-appointment-scheduling-2026-01-25.md",
+      "integrations": [
+        "human-sdr-team"
+      ],
+      "created_at": "2026-01-25",
+      "complexity_score": 5,
+      "effort_tier": "moderate",
+      "confidence": 0.7,
+      "business_process": "Appointment Scheduling",
+      "base_hours": 12,
+      "generated": true
+    },
+    "proactive-insurance-process-automation-2026-01-25": {
+      "file": "proactive-insurance-process-automation-2026-01-25.md",
+      "integrations": [
+        "amazon-connect"
+      ],
+      "created_at": "2026-01-25",
+      "complexity_score": 5,
+      "effort_tier": "moderate",
+      "confidence": 0.7,
+      "business_process": "insurance Process Automation",
+      "base_hours": 12,
+      "generated": true
+    },
+    "proactive-customer-support-2026-01-25": {
+      "file": "proactive-customer-support-2026-01-25.md",
+      "integrations": [
+        "banking-platform",
+        "customer-support-system",
+        "sms-system"
+      ],
+      "created_at": "2026-01-25",
+      "complexity_score": 5,
+      "effort_tier": "moderate",
+      "confidence": 0.7,
+      "business_process": "Customer Support",
+      "base_hours": 36,
+      "generated": true
+    },
+    "proactive-lead-intake-&-qualification-2026-01-25": {
+      "file": "proactive-lead-intake-&-qualification-2026-01-25.md",
+      "integrations": [
+        "telephony-system",
+        "exited-market"
+      ],
+      "created_at": "2026-01-25",
+      "complexity_score": 5,
+      "effort_tier": "moderate",
+      "confidence": 0.7,
+      "business_process": "Lead Intake & Qualification",
+      "base_hours": 24,
+      "generated": true
+    },
+    "proactive-healthcare-process-automation-2026-01-25": {
+      "file": "proactive-healthcare-process-automation-2026-01-25.md",
+      "integrations": [
+        "patient-onboarding-system",
+        "doctor-approved-faq-system"
+      ],
+      "created_at": "2026-01-25",
+      "complexity_score": 5,
+      "effort_tier": "moderate",
+      "confidence": 0.7,
+      "business_process": "healthcare Process Automation",
+      "base_hours": 24,
+      "generated": true
+    },
+    "proactive-after-hours-coverage-2026-01-25": {
+      "file": "proactive-after-hours-coverage-2026-01-25.md",
+      "integrations": [
+        "telephony-system",
+        "carrier-management-platform"
+      ],
+      "created_at": "2026-01-25",
+      "complexity_score": 5,
+      "effort_tier": "moderate",
+      "confidence": 0.7,
+      "business_process": "After-Hours Coverage",
+      "base_hours": 24,
+      "generated": true
+    },
+    "proactive-customer-support-2026-01-27": {
+      "file": "proactive-customer-support-2026-01-27.md",
+      "integrations": [
+        "banking-platform",
+        "customer-support-system",
+        "sms-system"
+      ],
+      "created_at": "2026-01-27",
+      "complexity_score": 4.7,
+      "effort_tier": "moderate",
+      "confidence": 0.75,
+      "business_process": "Customer Support",
+      "base_hours": 56,
+      "generated": true
+    },
+    "proactive-appointment-scheduling-2026-01-27": {
+      "file": "proactive-appointment-scheduling-2026-01-27.md",
+      "integrations": [
+        "human-sdr-team"
+      ],
+      "created_at": "2026-01-27",
+      "complexity_score": 5,
+      "effort_tier": "moderate",
+      "confidence": 0.9,
+      "business_process": "Appointment Scheduling",
+      "base_hours": 12,
+      "generated": true
+    },
+    "proactive-insurance-process-automation-2026-01-27": {
+      "file": "proactive-insurance-process-automation-2026-01-27.md",
+      "integrations": [
+        "amazon-connect"
+      ],
+      "created_at": "2026-01-27",
+      "complexity_score": 8,
+      "effort_tier": "complex",
+      "confidence": 0.95,
+      "business_process": "insurance Process Automation",
+      "base_hours": 15,
+      "generated": true
+    },
+    "proactive-lead-intake-&-qualification-2026-01-27": {
+      "file": "proactive-lead-intake-&-qualification-2026-01-27.md",
+      "integrations": [
+        "exited-market"
+      ],
+      "created_at": "2026-01-27",
+      "complexity_score": 5,
+      "effort_tier": "moderate",
+      "confidence": 0.7,
+      "business_process": "Lead Intake & Qualification",
+      "base_hours": 24,
+      "generated": true
+    },
+    "proactive-healthcare-process-automation-2026-01-27": {
+      "file": "proactive-healthcare-process-automation-2026-01-27.md",
+      "integrations": [
+        "patient-onboarding-system",
+        "doctor-approved-faq-system"
+      ],
+      "created_at": "2026-01-27",
+      "complexity_score": 5,
+      "effort_tier": "moderate",
+      "confidence": 0.95,
+      "business_process": "healthcare Process Automation",
+      "base_hours": 26,
+      "generated": true
+    },
+    "proactive-after-hours-coverage-2026-01-27": {
+      "file": "proactive-after-hours-coverage-2026-01-27.md",
+      "integrations": [
+        "telephony-system",
+        "carrier-management-platform"
+      ],
+      "created_at": "2026-01-27",
+      "complexity_score": 5.5,
+      "effort_tier": "moderate",
+      "confidence": 0.83,
+      "business_process": "After-Hours Coverage",
+      "base_hours": 38,
+      "generated": true
+    },
+    "proactive-lead-intake-&-qualification-2026-01-28": {
+      "file": "proactive-lead-intake-&-qualification-2026-01-28.md",
+      "integrations": [
+        "clio",
+        "lawpay"
+      ],
+      "created_at": "2026-01-28",
+      "complexity_score": 6,
+      "effort_tier": "moderate",
+      "confidence": 0.93,
+      "business_process": "Lead Intake & Qualification",
+      "base_hours": 24,
+      "generated": true
+    },
+    "proactive-customer-support-2026-01-28": {
+      "file": "proactive-customer-support-2026-01-28.md",
+      "integrations": [
+        "shopify",
+        "gorgias",
+        "shipstation",
+        "klaviyo"
+      ],
+      "created_at": "2026-01-28",
+      "complexity_score": 4.5,
+      "effort_tier": "moderate",
+      "confidence": 0.7,
+      "business_process": "Customer Support",
+      "base_hours": 44,
+      "generated": true
     }
   },
   "integration_lookup": {
     "ringcentral": [
       "ringcentral-pipedrive",
-      "orthopedic-patient-intake"
+      "orthopedic-patient-intake",
+      "proactive-lead-intake-&-qualification-2026-01-28"
     ],
     "pipedrive": [
       "ringcentral-pipedrive"
@@ -868,7 +1078,8 @@
       "orthopedic-patient-intake"
     ],
     "twilio": [
-      "orthopedic-patient-intake"
+      "orthopedic-patient-intake",
+      "proactive-appointment-scheduling-2026-01-27"
     ],
     "sms": [
       "orthopedic-patient-intake",
@@ -1538,11 +1749,154 @@
     ],
     "tracking-recalls": [
       "proactive-patient-scheduling-and-treatment-coordination-2026-01-15"
+    ],
+    "google-outlook": [
+      "proactive-appointment-scheduling-2026-01-21"
+    ],
+    "manual-entry": [
+      "proactive-appointment-scheduling-2026-01-21"
+    ],
+    "dentrix-g7": [
+      "proactive-appointment-scheduling-2026-01-25",
+      "proactive-appointment-scheduling-2026-01-27"
+    ],
+    "weave": [
+      "proactive-appointment-scheduling-2026-01-25",
+      "proactive-appointment-scheduling-2026-01-27"
+    ],
+    "google-calendar": [
+      "proactive-appointment-scheduling-2026-01-25"
+    ],
+    "rectangle-health": [
+      "proactive-appointment-scheduling-2026-01-25",
+      "proactive-appointment-scheduling-2026-01-27"
+    ],
+    "amazon-connect": [
+      "proactive-insurance-process-automation-2026-01-25",
+      "proactive-insurance-process-automation-2026-01-27"
+    ],
+    "call-center-systems": [
+      "proactive-customer-support-2026-01-25",
+      "proactive-customer-support-2026-01-27"
+    ],
+    "ivr": [
+      "proactive-customer-support-2026-01-25",
+      "proactive-customer-support-2026-01-27"
+    ],
+    "car-financing-systems": [
+      "proactive-customer-support-2026-01-25",
+      "proactive-customer-support-2026-01-27"
+    ],
+    "verification-services": [
+      "proactive-customer-support-2026-01-25",
+      "proactive-customer-support-2026-01-27"
+    ],
+    "scheduling-services": [
+      "proactive-customer-support-2026-01-25"
+    ],
+    "crm-system": [
+      "proactive-appointment-scheduling-2026-01-25"
+    ],
+    "demo-scheduling-system": [
+      "proactive-appointment-scheduling-2026-01-25"
+    ],
+    "human-sdr-team": [
+      "proactive-appointment-scheduling-2026-01-25",
+      "proactive-appointment-scheduling-2026-01-27"
+    ],
+    "follow-up-boss": [
+      "proactive-lead-intake-&-qualification-2026-01-25",
+      "proactive-lead-intake-&-qualification-2026-01-27"
+    ],
+    "zillow": [
+      "proactive-lead-intake-&-qualification-2026-01-25",
+      "proactive-lead-intake-&-qualification-2026-01-27"
+    ],
+    "realtor.com": [
+      "proactive-lead-intake-&-qualification-2026-01-25",
+      "proactive-lead-intake-&-qualification-2026-01-27"
+    ],
+    "google-voice": [
+      "proactive-lead-intake-&-qualification-2026-01-25",
+      "proactive-lead-intake-&-qualification-2026-01-27"
+    ],
+    "patient-onboarding-system": [
+      "proactive-healthcare-process-automation-2026-01-25",
+      "proactive-healthcare-process-automation-2026-01-27"
+    ],
+    "doctor-approved-faq-system": [
+      "proactive-healthcare-process-automation-2026-01-25",
+      "proactive-healthcare-process-automation-2026-01-27"
+    ],
+    "banking-platform": [
+      "proactive-customer-support-2026-01-25",
+      "proactive-customer-support-2026-01-27"
+    ],
+    "customer-support-system": [
+      "proactive-customer-support-2026-01-25",
+      "proactive-customer-support-2026-01-27"
+    ],
+    "sms-system": [
+      "proactive-customer-support-2026-01-25",
+      "proactive-customer-support-2026-01-27"
+    ],
+    "email-system": [
+      "proactive-after-hours-coverage-2026-01-25"
+    ],
+    "telephony-system": [
+      "proactive-after-hours-coverage-2026-01-25",
+      "proactive-lead-intake-&-qualification-2026-01-25",
+      "proactive-after-hours-coverage-2026-01-27",
+      "proactive-lead-intake-&-qualification-2026-01-27"
+    ],
+    "carrier-management-platform": [
+      "proactive-after-hours-coverage-2026-01-25",
+      "proactive-after-hours-coverage-2026-01-27"
+    ],
+    "exited-market": [
+      "proactive-lead-intake-&-qualification-2026-01-25",
+      "proactive-lead-intake-&-qualification-2026-01-27"
+    ],
+    "greenhouse": [
+      "proactive-customer-support-2026-01-27"
+    ],
+    "lever": [
+      "proactive-customer-support-2026-01-27"
+    ],
+    "workday": [
+      "proactive-customer-support-2026-01-27"
+    ],
+    "servicetitan": [
+      "proactive-appointment-scheduling-2026-01-27"
+    ],
+    "applied-epic": [
+      "proactive-lead-intake-&-qualification-2026-01-28"
+    ],
+    "docusign": [
+      "proactive-lead-intake-&-qualification-2026-01-28"
+    ],
+    "clio": [
+      "proactive-lead-intake-&-qualification-2026-01-28"
+    ],
+    "lawpay": [
+      "proactive-lead-intake-&-qualification-2026-01-28"
+    ],
+    "shopify": [
+      "proactive-customer-support-2026-01-28"
+    ],
+    "gorgias": [
+      "proactive-customer-support-2026-01-28"
+    ],
+    "shipstation": [
+      "proactive-customer-support-2026-01-28"
+    ],
+    "klaviyo": [
+      "proactive-customer-support-2026-01-28"
     ]
   },
   "stats": {
-    "total_reports": 54,
-    "integrations_covered": 230,
-    "average_confidence": 0.87
+    "total_reports": 69,
+    "integrations_covered": 270,
+    "average_confidence": 0.85
   }
 }
