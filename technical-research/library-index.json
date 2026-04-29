@@ -1,6 +1,6 @@
 {
   "version": "1.1.0",
-  "last_updated": "2026-01-28T19:29:39.008Z",
+  "last_updated": "2026-01-28T19:36:35.881Z",
   "description": "Index of technical research reports for integration estimation",
   "research_files": {
     "ringcentral-pipedrive": {
@@ -1035,17 +1035,16 @@
     "proactive-customer-support-2026-01-28": {
       "file": "proactive-customer-support-2026-01-28.md",
       "integrations": [
-        "shopify",
         "gorgias",
         "shipstation",
         "klaviyo"
       ],
       "created_at": "2026-01-28",
-      "complexity_score": 4.5,
+      "complexity_score": 5.7,
       "effort_tier": "moderate",
-      "confidence": 0.7,
+      "confidence": 0.97,
       "business_process": "Customer Support",
-      "base_hours": 44,
+      "base_hours": 34,
       "generated": true
     }
   },
