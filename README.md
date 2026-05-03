@@ -1,15 +1,15 @@
 # n8n_knowledge_base
 
-> a catalog of system schemas and proactive workflow patterns for n8n agents.
+> catalog of system schemas and proactive workflow patterns for n8n agents.
 
-![Status](https://img.shields.io/badge/status-experimental-orange.svg)
+![Status](https://img.shields.io/badge/status-active-brightgreen.svg)
 
 > [!NOTE]
-> Experiment. Built to learn one specific thing. Code may not survive.
+> Active personal project. Used in my own workflow. Issues triaged on a personal-time cadence.
 
 ## What it does
 
-This repository holds structural research on software platforms, including customer relationship managers, electronic health records, and internal tools. It provides data definitions and proactive workflow blueprints designed to be consumed by n8n or autonomous agents. You use these schemas to ground agent interactions in realistic data structures without needing live access during the design phase.
+This repository provides structural definitions for standard business software platforms like customer relationship managers and electronic health records. You consume these JSON blueprints in n8n to ground agent interactions in realistic data shapes before wiring up live API credentials. It isolates the schema design phase from production integration logic.
 
 ## Usage
 
