@@ -24,6 +24,7 @@ BOOTSTRAP_FORKS=${GITHUB_HYGIENE_BOOTSTRAP_FORKS:-0}
 PUSH_MODE=${GITHUB_HYGIENE_PUSH_MODE:-direct}
 APPLY_REMOTE=${GITHUB_HYGIENE_APPLY_REMOTE:-}
 BOOTSTRAP_REPOS=${GITHUB_HYGIENE_BOOTSTRAP_REPOS:-}
+REPO_FILTER=${GITHUB_HYGIENE_REPOS:-}
 EVENT_SEQUENCE=0
 
 mkdir -p "$REPORT_DIR" "$WORK_DIR"
@@ -43,6 +44,7 @@ Commands:
 Key env:
   GITHUB_HYGIENE_OWNER=wranngle
   GITHUB_HYGIENE_REPORT_DIR=/path/to/report
+  GITHUB_HYGIENE_REPOS=owner/repo,repo-name
   GITHUB_HYGIENE_PUSH_MODE=direct|branch|none
   GITHUB_HYGIENE_INCLUDE_ARCHIVED=1
   GITHUB_HYGIENE_BOOTSTRAP_FORKS=1
@@ -74,6 +76,14 @@ repo_json_bool(){ jq -r "$1 // false" <<<"$2"; }
 repo_json_string(){ jq -r "$1 // \"\"" <<<"$2"; }
 json_object_or_empty(){ jq -c 'if type == "object" then . else {} end' <<<"${1:-}" 2>/dev/null || printf '{}\n'; }
 json_array_or_empty(){ jq -c 'if type == "array" then . else [] end' <<<"${1:-}" 2>/dev/null || printf '[]\n'; }
+
+repo_selected(){ local slug=$1 token
+  [[ -z $REPO_FILTER ]]&&return 0
+  for token in ${REPO_FILTER//,/ };do
+    [[ $slug == "$token" || ${slug#*/} == "$token" ]]&&return 0
+  done
+  return 1
+}
 
 run_op(){ local repo=$1 task=$2 output
   shift 2
@@ -309,18 +319,18 @@ bootstrap_local_repo(){ local repo_obj=$1 slug archived fork default_branch repo
   repo_report="$REPORT_DIR/repos/$(slug_path "$slug")"
   clone_repo "$slug" "$default_branch" "$repo_dir" || return 1
   emit_event info bootstrap.run success "$slug" "$repo_dir"
-  if DOTFILES_SECURITY_ONLY=1 DOTFILES_SKIP_LLM=1 DOTFILES_SKIP_GH_HYDRATE=1 DOTFILES_FORCE=1 \
+  if (cd "$repo_dir" && DOTFILES_SECURITY_ONLY=1 DOTFILES_SKIP_LLM=1 DOTFILES_SKIP_GH_HYDRATE=1 DOTFILES_FORCE=1 \
     DOTFILES_LOG_FILE="$repo_report/dotfiles-bootstrap.jsonl" REPO_ROOT="$repo_dir" \
-    "$DOTFILES_BOOTSTRAP" >/dev/null; then
+    "$DOTFILES_BOOTSTRAP" >/dev/null); then
     record_operation "$slug" dotfiles.security-only success "$repo_dir"
   else
     record_operation "$slug" dotfiles.security-only failure "$repo_dir" "bootstrap exited nonzero"
   fi
   scan_local_repo "$slug" "$repo_dir" "$repo_report" || true
   commit_and_push_changes "$slug" "$repo_dir" "$default_branch" || true
-  if DOTFILES_SECURITY_ONLY=1 DOTFILES_SKIP_LLM=1 DOTFILES_FORCE=1 \
+  if (cd "$repo_dir" && DOTFILES_SECURITY_ONLY=1 DOTFILES_SKIP_LLM=1 DOTFILES_FORCE=1 \
     DOTFILES_LOG_FILE="$repo_report/dotfiles-hydrate.jsonl" REPO_ROOT="$repo_dir" \
-    "$DOTFILES_BOOTSTRAP" >/dev/null; then
+    "$DOTFILES_BOOTSTRAP" >/dev/null); then
     record_operation "$slug" dotfiles.hydrate success "$repo_dir"
   else
     record_operation "$slug" dotfiles.hydrate failure "$repo_dir" "hydrate exited nonzero"
@@ -362,6 +372,9 @@ main(){
   inventory_repositories
   if [[ $COMMAND != inventory ]]; then
     while IFS= read -r repo_obj; do
+      if ! repo_selected "$(repo_json_string '.nameWithOwner' "$repo_obj")";then
+        continue
+      fi
       audit_remote_repo "$repo_obj"
       if [[ $APPLY_REMOTE == 1 ]]; then
         apply_remote_repo "$repo_obj"
