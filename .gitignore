@@ -53,3 +53,7 @@ temp/
 old/*
 !old/.gitkeep
 # <<< dotfiles-managed gitignore <<<
+
+# Node
+node_modules/
+
