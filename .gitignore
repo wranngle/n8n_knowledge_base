@@ -56,3 +56,7 @@ old/*
 # Dotfiles-tooling runtime artifacts (canonical: <repo>/.artifacts/<system>/<key>.<ext>)
 .artifacts/
 # <<< dotfiles-managed gitignore <<<
+
+# Node
+node_modules/
+
