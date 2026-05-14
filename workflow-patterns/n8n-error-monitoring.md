@@ -53,3 +53,10 @@ If you are using Cloudflare Pages Functions (like `functions/api/leads.ts`), you
 1.  **Analytics**: Monitor the `/api/leads` error rates in the Cloudflare Pages dashboard under the **Analytics** tab. Look for spikes in 5xx errors.
 2.  **Sentry/Logflare Integration**: For real-time alerting on Cloudflare failures, consider adding a logging middleware to your Pages functions that sends errors to Sentry or a webhook.
 3.  **Webhook to n8n**: You can have your Cloudflare function `catch` errors and `POST` them to an n8n webhook node, which then routes through the same Global Error Handler workflow.
+
+## Sources
+
+- Migrated 2026-05-06 from legacy `~/.claude/docs/` shelf; original notes were captured during n8n production rollout for the Wranngle voice-ops stack.
+- n8n documentation: <https://docs.n8n.io/flow-logic/error-handling/> — Error Workflow configuration and the `$json.error` payload contract.
+- Companion repo: `~/projects/n8n/AGENTS.md` — governance rules for production-grade error workflows referenced above.
+- Template artifact: `templates/n8n/error-handler-framework.json` in this repo (the workflow JSON the installation steps import).
