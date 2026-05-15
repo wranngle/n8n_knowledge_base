@@ -1,6 +1,6 @@
 # ElevenLabs Agent Governance Configuration
 # ==========================================
-# 
+#
 # DEPLOYMENT PHASES:
 #   DEV      - Development, freely modifiable
 #   ALPHA    - Early testing, clone-only
@@ -31,30 +31,30 @@ phases:
     description: "Development - active work in progress"
     color: "#4CAF50"
     modifiable: true
-    
+
   ALPHA:
     description: "Alpha - early internal testing"
     color: "#FFC107"
     modifiable: false
     can_promote_to: [BETA]
-    
+
   BETA:
     description: "Beta - external/user testing"
     color: "#FF9800"
     modifiable: false
     can_promote_to: [GA]
-    
+
   GA:
     description: "General Availability - stable release"
     color: "#2196F3"
     modifiable: false
     can_promote_to: [PROD]
-    
+
   PROD:
     description: "Production - live customer-facing"
     color: "#9C27B0"
     modifiable: false
-    
+
   ARCHIVED:
     description: "Archived - deprecated, kept for reference"
     color: "#757575"
@@ -83,7 +83,7 @@ agents:
         phase: DEV
         timestamp: "2025-12-28T05:40:00Z"
         note: "Hygiene audit - confirmed DEV phase, fixed corrupted history"
-        
+
   "agent_8001kdgp7qbyf4wvhs540be78vew":
     name: "[DEV] Sarah - Wranngle Receptionist"
     phase: DEV
@@ -112,7 +112,7 @@ agents:
         phase: DEV
         timestamp: "2025-12-28T05:40:00Z"
         note: "Hygiene audit - confirmed DEV phase"
-        
+
   "agent_3801kdf7fkhcev8tkhpm92d65jws":
     name: "[DEV] Client Data Test Agent"
     phase: DEV
@@ -158,7 +158,7 @@ voices:
     used_by:
       - agent_5701kdgf9s4vfe9rhe68ntjrms9g
       - agent_3801kdf7fkhcev8tkhpm92d65jws
-      
+
   "EXAVITQu4vr4xnSDxMaL":
     name: "Sarah"
     used_by:
