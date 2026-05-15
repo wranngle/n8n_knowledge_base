@@ -1,0 +1,6 @@
+# Negative-test fixture: tag 'meme-status' is NOT in the controlled vocabulary,
+# so `nkb submit --headless --fixture` MUST reject with exit code 2.
+title: "Bogus tag test"
+problem: "Operator submits a pattern with a non-vocabulary tag"
+tags: [meme-status]
+submitter: "@wranngle"
