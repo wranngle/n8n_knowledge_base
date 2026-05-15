@@ -58,4 +58,7 @@ tmp/
 temp/
 old/*
 !old/.gitkeep
+
+# Dotfiles-tooling runtime artifacts (canonical: <repo>/.artifacts/<system>/<key>.<ext>)
+.artifacts/
 # <<< dotfiles-managed gitignore <<<
