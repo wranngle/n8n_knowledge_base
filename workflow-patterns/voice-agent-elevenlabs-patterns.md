@@ -397,3 +397,11 @@ To connect ElevenLabs Conversational AI to n8n:
 ---
 
 *Generated from n8n Template Database Analysis*
+
+## Sources
+
+- n8n community template database analysis (2025-12-29 snapshot); the seven template IDs above (2846, 4484, 4672, 4368, 4888, 3657, 3563) are queryable via the public n8n template index: <https://n8n.io/workflows/>.
+- ElevenLabs API reference for endpoints cited in Pattern 1: <https://elevenlabs.io/docs/api-reference>.
+- Twilio Programmable Voice docs for Pattern 4 phone-integration patterns: <https://www.twilio.com/docs/voice>.
+- Companion: `workflow-patterns/n8n-error-monitoring.md` for failure-mode handling when voice agents surface upstream errors.
+- Internal voice-ops stack documentation: `~/projects/n8n/AGENTS.md` and Wranngle voice-evals harness notes.
