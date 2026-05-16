@@ -1,3 +1,7 @@
+---
+tags: [failure-mode, workaround]
+---
+
 > Pattern: cross-workflow error handling and alerting in n8n.
 > Source: migrated 2026-05-06 from the legacy `~/.claude/docs/` shelf.
 > Pairs with: `workflow-patterns/voice-agent-elevenlabs-patterns.md` (when voice agents need to surface errors) and the n8n governance rules in `~/projects/n8n/AGENTS.md`.
@@ -37,6 +41,10 @@ To monitor a workflow, you must specify the Error Handler in its settings:
 
 ## Adding Custom Logging
 You can extend the "Format Error Message" node to log errors to a database or n8n Data Table for long-term auditing and error-rate analysis.
+
+## Why this fails
+
+Without a centralized error workflow, individual workflows silently swallow failures: n8n's default behavior on a failed node is to halt the execution and surface the error only in the n8n UI's Executions tab. Nobody is watching that tab. The most common observed outcome is a webhook receiver that has been broken for hours before someone notices a downstream metric dip. The workaround is to attach a Global Error Handler workflow to every production workflow so failure routes through a single notifier — and to log the Execution ID, since the UI link is the only fast path back to the failed run.
 
 ## Cloudflare Pages Error Monitoring
 
