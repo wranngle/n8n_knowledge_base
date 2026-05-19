@@ -1,0 +1,19 @@
+{
+  "name": "n8n_knowledge_base",
+  "version": "0.1.0",
+  "description": "Local full-text search CLI over n8n + ElevenLabs voice-ops knowledge base.",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "nkb": "scripts/nkb.mjs"
+  },
+  "scripts": {
+    "test": "bats tests/n8n_knowledge_base.bats"
+  },
+  "dependencies": {
+    "minisearch": "^7.1.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
