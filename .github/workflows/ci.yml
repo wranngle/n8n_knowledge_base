@@ -58,6 +58,10 @@ jobs:
             echo "::group::node"
             node --version
             (npm ci || npm install) >/dev/null
+            if grep -Eq '"test"[[:space:]]*:[[:space:]]*"[^"]*\bbats\b' package.json; then
+              sudo apt-get update -qq
+              sudo apt-get install -y -qq bats
+            fi
             npm test --if-present
             echo "::endgroup::"
           elif [[ -f pyproject.toml || -f requirements.txt || -f setup.py ]];then
