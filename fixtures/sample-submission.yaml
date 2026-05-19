@@ -1,0 +1,9 @@
+# Sample submission record consumed by `nkb submit --headless --fixture`.
+# Mirrors the fields prompted in interactive mode.
+title: "Duplicate Slack message on n8n retry"
+slug: "duplicate-slack-on-retry"
+problem: "Slack node fires twice when an upstream HTTP node retries — operator sees the same alert post twice"
+tags: [failure-mode, workaround]
+submitter: "@wranngle"
+snippet: '{"node":"Slack","retryOnFail":true,"maxTries":3}'
+story: "Observed 2026-04-12 during incident IR-238. Slack workflow looked idempotent but the HTTP node above it retried on a transient 503; the second pass fired Slack a second time because there was no idempotency key on the Slack call."
