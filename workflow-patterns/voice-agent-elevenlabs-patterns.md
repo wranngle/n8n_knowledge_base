@@ -1,8 +1,18 @@
+---
+tags: [failure-mode, workaround]
+---
+
 # Voice Agent & ElevenLabs Workflow Patterns
 
 **Source**: n8n Template Database Analysis
 **Templates Analyzed**: 7 community workflows
 **Date**: 2025-12-29
+
+---
+
+## Why this fails
+
+The first-attempt failure mode is searching the n8n node palette for "ElevenLabs" and assuming the absence of a node means the integration is unsupported. It is supported — but only through generic HTTP Request nodes against `https://api.elevenlabs.io/v1/`, with `xi-api-key` carried as a Header Auth credential. The second failure mode is paying per-character for TTS without caching: identical prompts get re-synthesized on every run. The workaround is the HTTP-node pattern documented below, plus a Cache or Data Table lookup keyed on the input string before any TTS call.
 
 ---
 

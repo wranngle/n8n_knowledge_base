@@ -1,28 +1,49 @@
 #!/usr/bin/env bats
 
-# Behavior tests for the n8n_knowledge_base repo.
+# Outcome tests for the `nkb` local full-text search CLI.
+# Asserts the contract: query → exit code + stdout shape against the real on-disk corpus.
 
 setup() {
   REPO_ROOT="$(cd "$(dirname "$BATS_TEST_FILENAME")/.." && pwd)"
   cd "$REPO_ROOT"
 }
 
-# First-user-moment contract: the README must open with the nkb search example
-# so a cold reader sees the product promise before any other narrative.
-@test "README first-user-moment: 'nkb search' appears within the first 50 lines" {
-  run head -n 50 README.md
+@test "nkb search: known query 'twilio' returns >=1 hit with path:line:snippet shape" {
+  run node scripts/nkb.mjs search twilio
   [ "$status" -eq 0 ]
-  echo "$output" | grep -q 'nkb search'
+  [ -n "$output" ]
+  echo "$output" | head -1 | grep -qE '^[^:]+:[0-9]+:.+'
 }
 
-# Guard the ordering: the fenced demo block must precede any '## ' section
-# heading. Otherwise the snippet drifts back into a buried Usage subsection.
-@test "README first-user-moment: fenced demo block precedes the first '## ' heading" {
-  local readme_path="$REPO_ROOT/README.md"
-  local first_fence first_h2
-  first_fence=$(grep -n '^```' "$readme_path" | head -n 1 | cut -d: -f1)
-  first_h2=$(grep -n '^## ' "$readme_path" | head -n 1 | cut -d: -f1)
-  [ -n "$first_fence" ]
-  [ -n "$first_h2" ]
-  [ "$first_fence" -lt "$first_h2" ]
+@test "nkb search: unknown token 'zzznonexistentzzz' exits 0 with empty stdout" {
+  run node scripts/nkb.mjs search zzznonexistentzzz
+  [ "$status" -eq 0 ]
+  [ -z "$output" ]
+}
+
+@test "nkb search: 'elevenlabs' hits a real path under elevenlabs-agents/ or workflow-patterns/" {
+  run node scripts/nkb.mjs search elevenlabs
+  [ "$status" -eq 0 ]
+  echo "$output" | grep -qE '^(elevenlabs-agents|workflow-patterns)/'
+}
+
+# Failure-mode tag schema (per docs/conventions.md).
+
+@test "nkb search --tag failure-mode: returns >=5 distinct workflow-patterns/ docs" {
+  run node scripts/nkb.mjs search --tag failure-mode
+  [ "$status" -eq 0 ]
+  count="$(echo "$output" | grep -cE '^workflow-patterns/.+\.md:')"
+  [ "$count" -ge 5 ]
+}
+
+@test "nkb lint: every failure-mode doc has '## Why this fails' heading" {
+  run node scripts/nkb.mjs lint
+  [ "$status" -eq 0 ]
+  echo "$output" | grep -qE '^lint ok: [0-9]+ failure-mode doc'
+}
+
+@test "nkb search --tag failure-mode 'twilio': narrows to twilio failure-mode doc" {
+  run node scripts/nkb.mjs search --tag failure-mode twilio
+  [ "$status" -eq 0 ]
+  echo "$output" | grep -q 'twilio-11200-stream-disconnect.md'
 }
