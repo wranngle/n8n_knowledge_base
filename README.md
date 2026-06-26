@@ -14,7 +14,7 @@ Search the catalog with the local `nkb` CLI (Node 20+, no build step):
 ```bash
 npm install
 node scripts/nkb.mjs search "twilio 11200"
-# → technical-research/twilio.json:42: ...error code 11200 (HTTP retrieval failure)...
+# → workflow-patterns/twilio-11200-stream-disconnect.md:2: # Twilio Error 11200 on Media Streams > Pattern: voice-agent calls die mid-conversation...
 ```
 
 `nkb search <query>` prints ranked `path:line:snippet` hits across
@@ -22,14 +22,14 @@ node scripts/nkb.mjs search "twilio 11200"
 
 ## What it does
 
-This repository provides structural definitions for standard business software platforms like customer relationship managers and electronic health records. You consume these JSON blueprints in n8n to ground agent interactions in realistic data shapes before wiring up live API credentials. It isolates the schema design phase from production integration logic.
+This repository provides structural definitions for standard business software platforms: CRMs (HubSpot, Salesforce), point of sale, calendars, email, forms, Twilio, Slack, and SQL. You consume these JSON blueprints in n8n to ground agent interactions in realistic data shapes before wiring up live API credentials. It isolates the schema design phase from production integration logic.
 
 Read raw schemas directly when you need the full document:
 
 ```bash
-cat technical-research/crm.json
+cat technical-research/hubspot.json
 ```
 
 ## License
 
-See [LICENSE](LICENSE) for details.
+MIT, declared in `package.json`.
