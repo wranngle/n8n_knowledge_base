@@ -4,6 +4,7 @@
   "description": "Local full-text search CLI over n8n + ElevenLabs voice-ops knowledge base.",
   "type": "module",
   "private": true,
+  "license": "MIT",
   "bin": {
     "nkb": "scripts/nkb.mjs"
   },
