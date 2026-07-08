@@ -2,6 +2,8 @@
 
 > catalog of system schemas and proactive workflow patterns for n8n agents.
 
+![nkb searching the catalog: two real queries returning ranked path:line:snippet hits](docs/hero.svg)
+
 ![Status](https://img.shields.io/badge/status-active-brightgreen.svg)
 
 > [!NOTE]

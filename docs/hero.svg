@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13">
+  <style>
+    .frame { fill: #0d1117; stroke: #30363d; stroke-width: 1; }
+    .bar { fill: #161b22; }
+    .dot-r { fill: #ff5f57; } .dot-y { fill: #febc2e; } .dot-g { fill: #28c840; }
+    .title { fill: #8b949e; font-size: 12px; }
+    .prompt { fill: #7ee787; }
+    .cmd { fill: #e6edf3; }
+    .path { fill: #a371f7; }
+    .line-no { fill: #f0883e; }
+    .snippet { fill: #8b949e; }
+    .type1, .type2 { display: inline-block; overflow: hidden; white-space: nowrap; }
+    .reveal { opacity: 0; }
+    @keyframes typing1 { 0% { width: 0; } 100% { width: 27ch; } }
+    @keyframes typing2 { 0% { width: 0; } 100% { width: 22ch; } }
+    @keyframes fadein { to { opacity: 1; } }
+    .t1 { animation: typing1 1.4s steps(27, end) 0.6s both; }
+    .o1 { animation: fadein 0.3s ease 2.3s both; }
+    .t2 { animation: typing2 1.2s steps(22, end) 3.4s both; }
+    .o2 { animation: fadein 0.3s ease 4.9s both; }
+    .o3 { animation: fadein 0.3s ease 5.3s both; }
+    .o4 { animation: fadein 0.3s ease 5.7s both; }
+    .o5 { animation: fadein 0.3s ease 6.1s both; }
+    .cursor { fill: #e6edf3; animation: blink 1s step-end infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+  </style>
+  <rect class="frame" x="0.5" y="0.5" width="799" height="339" rx="8"/>
+  <rect class="bar" x="1" y="1" width="798" height="32" rx="8"/>
+  <rect class="bar" x="1" y="17" width="798" height="16"/>
+  <circle class="dot-r" cx="20" cy="17" r="5.5"/>
+  <circle class="dot-y" cx="40" cy="17" r="5.5"/>
+  <circle class="dot-g" cx="60" cy="17" r="5.5"/>
+  <text class="title" x="400" y="21" text-anchor="middle">nkb — search the n8n agent knowledge catalog</text>
+
+  <text x="24" y="66"><tspan class="prompt">$</tspan></text>
+  <foreignObject x="40" y="52" width="720" height="20">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="color:#e6edf3;font:13px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;overflow:hidden;white-space:nowrap;width:27ch" class="t1">nkb search "twilio 11200"</div>
+  </foreignObject>
+
+  <g class="reveal o1">
+    <text x="24" y="94"><tspan class="path">workflow-patterns/twilio-11200-stream-disconnect.md</tspan><tspan class="line-no">:2:</tspan></text>
+    <text x="40" y="112" class="snippet"># Twilio Error 11200 on Media Streams &gt; Pattern: voice-agent calls die mid-conversation…</text>
+  </g>
+
+  <text x="24" y="152"><tspan class="prompt">$</tspan></text>
+  <foreignObject x="40" y="138" width="720" height="20">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="color:#e6edf3;font:13px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;overflow:hidden;white-space:nowrap;width:22ch" class="t2">nkb search "webhook"</div>
+  </foreignObject>
+
+  <g class="reveal o2">
+    <text x="24" y="180"><tspan class="path">workflow-patterns/n8n-webhook-cold-start-timeout.md</tspan><tspan class="line-no">:2:</tspan></text>
+    <text x="40" y="198" class="snippet"># n8n Webhook Cold-Start Timeout on Voice-Triggered Workflows &gt; Pattern: voice agents…</text>
+  </g>
+  <g class="reveal o3">
+    <text x="24" y="222"><tspan class="path">workflow-patterns/voice-agent-pattern-index.json</tspan><tspan class="line-no">:17:</tspan></text>
+    <text x="40" y="240" class="snippet">{ "id": 2846, "name": "AI Voice Chatbot with ElevenLabs &amp; OpenAI", "pattern": "webhook-rag…</text>
+  </g>
+  <g class="reveal o4">
+    <text x="24" y="264"><tspan class="path">workflow-patterns/voice-agent-elevenlabs-patterns.md</tspan><tspan class="line-no">:26:</tspan></text>
+    <text x="40" y="282" class="snippet">| 2846 | AI Voice Chatbot with ElevenLabs &amp; OpenAI | Webhook + RAG + Vector Store |…</text>
+  </g>
+  <g class="reveal o5">
+    <text x="24" y="312"><tspan class="prompt">$</tspan> <tspan class="cursor">▊</tspan></text>
+  </g>
+</svg>
