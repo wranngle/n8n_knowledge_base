@@ -87,7 +87,7 @@ lint ok: 6 failure-mode doc(s) checked
 
 <table>
 <tr>
-<td align="center" width="50%"><b>Integration research</b><br/>25 vendor records, each with native n8n node, auth type, complexity tier, and estimated hours: HubSpot, Salesforce, Twilio, Slack, Shopify, Calendly, RingCentral, Google Ads, Google Calendar, Outlook, Gmail, SQL, Excel, and more</td>
+<td align="center" width="50%"><b>Integration research</b><br/>25 vendor records, each with native n8n node, auth type, complexity tier, and estimated hours: HubSpot, Salesforce, Twilio, Slack, Shopify, Calendly, RingCentral, Google Ads, Google Calendar, Outlook, SQL, Excel, and more</td>
 <td align="center" width="50%"><b>Failure-mode patterns</b><br/>webhook cold-start timeouts, cross-workflow error monitoring, Twilio Error 11200 stream disconnects, ElevenLabs tool-name collisions, voice-agent workflow patterns</td>
 </tr>
 </table>
