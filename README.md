@@ -29,7 +29,7 @@
 
 *One query in, path and line out.*
 
-n8n_knowledge_base is a catalog of 35 n8n operating docs with a single-file search CLI, `nkb`, on top. One command returns path, line, and snippet hits across hand-written workflow failure-mode patterns and per-vendor integration research records. Plain Node, one dependency, no build step.
+n8n_knowledge_base is a catalog of 47 n8n operating docs with a single-file search CLI, `nkb`, on top. One command returns path, line, and snippet hits across hand-written workflow failure-mode patterns and per-vendor integration research records. Plain Node, one dependency, no build step.
 
 ## 🔎 Features
 
@@ -89,7 +89,7 @@ lint ok: 6 failure-mode doc(s) checked
 
 <table>
 <tr>
-<td align="center" width="50%"><b>Integration research</b><br/>25 vendor records, each with native n8n node, auth type, complexity tier, and estimated hours: HubSpot, Salesforce, Twilio, Slack, Shopify, Calendly, RingCentral, Google Ads, Google Calendar, Outlook, SQL, Excel, and more</td>
+<td align="center" width="50%"><b>Integration research</b><br/>27 vendor records, each with native n8n node, auth type, complexity tier, and estimated hours: HubSpot, Salesforce, Twilio, Slack, Shopify, Calendly, RingCentral, Pipedrive, athenahealth, Google Ads, Google Calendar, Outlook, SQL, Excel, and more</td>
 <td align="center" width="50%"><b>Failure-mode patterns</b><br/>webhook cold-start timeouts, cross-workflow error monitoring, Twilio Error 11200 stream disconnects, ElevenLabs tool-name collisions, voice-agent workflow patterns</td>
 </tr>
 </table>
@@ -112,6 +112,43 @@ Point `nkb search` at it and ask it anything n8n. Named vendors are catalog entr
 | `node scripts/search-community.mjs <query>` | Search the Zie619 community workflow corpus (see [Search before you build](docs/search-before-build.md)) |
 | `node scripts/build-index.mjs` | Rebuilds the search index |
 | `node scripts/lint-citations.mjs` | Citation lint |
+
+## Lineage
+
+This repository is the research and estimation half of a larger system. It has
+two ancestors.
+
+The first is the unified-presales-report product: a generator that turned a
+pasted brief into client-ready documents backed by a deterministic labor
+estimator and a FinOps engine. That code was ported to `gtm_ops` and verified by
+a 13-agent port map (`PORT_TO_GTM_OPS.md`); the pipeline and pricing engine live
+there now, not here. The knowledge base keeps the method and the records; gtm_ops
+consumes them.
+
+The second is a workflow-engineering methodology framework whose defining asset
+was a search over roughly 7,052 community workflows — the Zie619 library (4,343)
+plus the n8n-MCP template corpus (2,709). Searching those corpora before building
+was a required step. That discipline is restored in
+[docs/search-before-build.md](docs/search-before-build.md) and
+[scripts/search-community.mjs](scripts/search-community.mjs).
+
+The tree shrank on purpose. The `d3a277e` purge (2026-05-18) deleted 290 files —
+223 `generated: true` research-cache JSONs, 66 auto-generated fallback reports,
+and a 108KB SQLite research library (261 rows) — taking the repo from 386 to 97
+tracked files. The filter was right: generated cache is not curated knowledge.
+The blast radius was not: it also took two hand-curated records and the
+labor-estimation data layer, which existed nowhere else.
+
+This restoration put back what the purge should have kept: the two curated
+casualties and seven high-signal reports recovered from `d3a277e` (each tagged
+`recovered_from: d3a277e`), the research-waterfall method, the community-corpus
+search, and an `estimate` / `freshness` interface that reads the records instead
+of leaving their hour fields decorative.
+
+The raw corpora are archived off this public tree: the presales product as a git
+bundle and the private `unified-presales-report-archive` repo; the generated
+research corpus and the community-workflow corpora in the private
+`n8n-research-corpus-archive` repo.
 
 ## ⭐ Star history
 
