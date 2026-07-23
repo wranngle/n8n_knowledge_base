@@ -35,7 +35,7 @@ n8n_knowledge_base is a catalog of 35 n8n operating docs with a single-file sear
 
 - 🔍 **Full-text search**: `nkb search "<query>"` greps the whole catalog and prints `path:line:snippet` hits; `--tag` narrows by front-matter tag.
 - 🧹 **Catalog lint**: `nkb lint` checks every failure-mode doc for required front-matter.
-- 📇 **25 integration research records**: native n8n node name, auth type, complexity tier, and estimated hours per vendor.
+- 📇 **Integration research records**: native n8n node name, auth type, complexity tier, and estimated hours per vendor. [How a record gets made](docs/research-waterfall.md) documents the research waterfall, the complexity rubric, and the tier-to-hours mapping behind those fields.
 - 🧯 **5 failure-mode pattern docs**: symptom, root cause, and workaround for real n8n and voice-agent failures, plus a community-template index.
 - 🕸️ **Standalone tooling**: dependency graph, dedupe detection, adoption stats, JSON-LD export, and an HTTP search shim ship as `node scripts/*.mjs` commands.
 
