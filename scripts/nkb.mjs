@@ -36,10 +36,10 @@ async function walk(dir) {
 
 function parseFrontMatter(text) {
   if (!text.startsWith("---\n") && !text.startsWith("---\r\n")) {
-    return { tags: [], body: text };
+    return { tags: [], body: text, lineOffset: 0 };
   }
   const end = text.indexOf("\n---", 4);
-  if (end === -1) return { tags: [], body: text };
+  if (end === -1) return { tags: [], body: text, lineOffset: 0 };
   const block = text.slice(4, end);
   const tags = [];
   const tagLine = block.match(/^tags:\s*(.+)$/m);
@@ -57,7 +57,12 @@ function parseFrontMatter(text) {
   }
   const flowEnd = end + 4;
   const after = text[flowEnd] === "\n" ? flowEnd + 1 : flowEnd;
-  return { tags, body: text.slice(after) };
+  // Front matter is dropped from `body`, so any line number computed against
+  // `body` runs short by the number of lines the front matter occupied. Count
+  // those stripped lines here and add the offset back wherever a file line is
+  // reported (snippetFor, tag listing), so `path:line:` points at the real file.
+  const lineOffset = text.slice(0, after).split("\n").length - 1;
+  return { tags, body: text.slice(after), lineOffset };
 }
 
 async function loadDocs() {
@@ -69,9 +74,9 @@ async function loadDocs() {
     for (const file of files) {
       try {
         const raw = await readFile(file, "utf8");
-        const { tags, body } = parseFrontMatter(raw);
+        const { tags, body, lineOffset } = parseFrontMatter(raw);
         const path = relative(REPO_ROOT, file);
-        docs.push({ id: path, path, text: body, tags, tagsText: tags.join(" ") });
+        docs.push({ id: path, path, text: body, tags, tagsText: tags.join(" "), lineOffset });
       } catch {
         // skip unreadable
       }
@@ -83,14 +88,14 @@ async function loadDocs() {
 function buildIndex(docs) {
   const idx = new MiniSearch({
     fields: ["path", "text", "tagsText"],
-    storeFields: ["path", "text", "tags"],
+    storeFields: ["path", "text", "tags", "lineOffset"],
     searchOptions: { boost: { path: 2 }, prefix: true, fuzzy: 0.1 },
   });
   idx.addAll(docs);
   return idx;
 }
 
-function snippetFor(text, query) {
+function snippetFor(text, query, lineOffset = 0) {
   const haystack = text.toLowerCase();
   const tokens = query.toLowerCase().split(/\s+/).filter(Boolean);
   let hit = -1;
@@ -101,7 +106,7 @@ function snippetFor(text, query) {
   if (hit === -1) hit = 0;
   const start = Math.max(0, hit - SNIPPET_RADIUS);
   const end = Math.min(text.length, hit + SNIPPET_RADIUS);
-  const line = text.slice(0, hit).split("\n").length;
+  const line = lineOffset + text.slice(0, hit).split("\n").length;
   return {
     line,
     snippet: text.slice(start, end).replace(/\s+/g, " ").trim(),
@@ -127,8 +132,11 @@ async function runSearch(rest) {
   if (flags.tag && !query) {
     const hits = docs.filter((d) => d.tags.includes(flags.tag));
     for (const d of hits) {
-      const firstLine = d.text.split("\n").find((l) => l.trim().length > 0) || "";
-      process.stdout.write(`${d.path}:1:[tags=${d.tags.join(",")}] ${firstLine.slice(0, 160).trim()}\n`);
+      const lines = d.text.split("\n");
+      const idx = lines.findIndex((l) => l.trim().length > 0);
+      const firstLine = idx === -1 ? "" : lines[idx];
+      const line = d.lineOffset + (idx === -1 ? 1 : idx + 1);
+      process.stdout.write(`${d.path}:${line}:[tags=${d.tags.join(",")}] ${firstLine.slice(0, 160).trim()}\n`);
     }
     return;
   }
@@ -143,7 +151,7 @@ async function runSearch(rest) {
   const results = idx.search(query, { combineWith: "AND" }).slice(0, MAX_RESULTS);
   if (results.length === 0) return;
   for (const r of results) {
-    const { line, snippet } = snippetFor(r.text, query);
+    const { line, snippet } = snippetFor(r.text, query, r.lineOffset);
     process.stdout.write(`${r.path}:${line}:${snippet}\n`);
   }
 }

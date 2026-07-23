@@ -75,7 +75,7 @@ flowchart LR
 
 ```
 $ node scripts/nkb.mjs search "twilio 11200"
-workflow-patterns/twilio-11200-stream-disconnect.md:2:# Twilio Error 11200 on Media Streams...
+workflow-patterns/twilio-11200-stream-disconnect.md:5:# Twilio Error 11200 on Media Streams...
 
 $ node scripts/nkb.mjs lint
 lint ok: 6 failure-mode doc(s) checked

@@ -48,6 +48,36 @@ setup() {
   echo "$output" | grep -q 'twilio-11200-stream-disconnect.md'
 }
 
+# --- Line-number accuracy across stripped YAML front matter ---
+# Regression guard: nkb strips front matter before indexing, so a naive line
+# count reports lines short by the size of the front matter. The reported
+# `path:line:` must resolve to the same content in the real source file.
+
+@test "nkb search: reported line for a front-mattered doc resolves to the real file line" {
+  run node scripts/nkb.mjs search "twilio 11200"
+  [ "$status" -eq 0 ]
+  hit="$(echo "$output" | grep 'twilio-11200-stream-disconnect.md' | head -1)"
+  [ -n "$hit" ]
+  path="$(echo "$hit" | cut -d: -f1)"
+  reported="$(echo "$hit" | cut -d: -f2)"
+  # The hit lands on the H1; that heading must actually live on `reported` in the file.
+  real="$(grep -nF '# Twilio Error 11200 on Media Streams' "$path" | head -1 | cut -d: -f1)"
+  [ -n "$real" ]
+  [ "$reported" -eq "$real" ]
+}
+
+@test "nkb search --tag: listed line resolves to the doc's first content line, not line 1" {
+  run node scripts/nkb.mjs search --tag failure-mode
+  [ "$status" -eq 0 ]
+  hit="$(echo "$output" | grep 'twilio-11200-stream-disconnect.md' | head -1)"
+  [ -n "$hit" ]
+  path="$(echo "$hit" | cut -d: -f1)"
+  reported="$(echo "$hit" | cut -d: -f2)"
+  real="$(grep -nF '# Twilio Error 11200 on Media Streams' "$path" | head -1 | cut -d: -f1)"
+  [ "$reported" -eq "$real" ]
+  [ "$reported" -ne 1 ]
+}
+
 # --- HTTP shim (nkb-serve.mjs) ---
 # Boots the server on an ephemeral port, asserts the JSON contract that the n8n
 # HTTP Request node consumes, then tears it down. Port chosen high to avoid
