@@ -35,6 +35,7 @@ n8n_knowledge_base is a catalog of 35 n8n operating docs with a single-file sear
 
 - 🔍 **Full-text search**: `nkb search "<query>"` greps the whole catalog and prints `path:line:snippet` hits; `--tag` narrows by front-matter tag.
 - 🧹 **Catalog lint**: `nkb lint` checks every failure-mode doc for required front-matter.
+- 🧮 **Labor estimate**: `nkb estimate <integration...>` sums the research-waterfall tier hours across records and flags integrations with no record; `nkb freshness` flags records past the 90-day decay line.
 - 📇 **Integration research records**: native n8n node name, auth type, complexity tier, and estimated hours per vendor. [How a record gets made](docs/research-waterfall.md) documents the research waterfall, the complexity rubric, and the tier-to-hours mapping behind those fields.
 - 🧯 **5 failure-mode pattern docs**: symptom, root cause, and workaround for real n8n and voice-agent failures, plus a community-template index.
 - 🕸️ **Standalone tooling**: dependency graph, dedupe detection, adoption stats, JSON-LD export, and an HTTP search shim ship as `node scripts/*.mjs` commands.
@@ -105,6 +106,8 @@ Point `nkb search` at it and ask it anything n8n. Named vendors are catalog entr
 | `node scripts/nkb-run.mjs <slug> --sandbox` | Sandboxed pattern runner |
 | `node scripts/nkb-stats.mjs` | Adoption stats |
 | `node scripts/nkb-export.mjs --jsonld` | JSON-LD catalog export |
+| `node scripts/nkb.mjs estimate <integration...>` | Sum research-waterfall tier hours across integration records; flags gaps |
+| `node scripts/nkb.mjs freshness` | Flag research records older than 90 days at score 0.2 |
 | `node scripts/nkb-serve.mjs` | HTTP search shim on localhost |
 | `node scripts/search-community.mjs <query>` | Search the Zie619 community workflow corpus (see [Search before you build](docs/search-before-build.md)) |
 | `node scripts/build-index.mjs` | Rebuilds the search index |

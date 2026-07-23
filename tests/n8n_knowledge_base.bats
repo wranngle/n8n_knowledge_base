@@ -111,6 +111,36 @@ COMMUNITY_FIXTURE="fixtures/community/zie619-index.sample.json"
   echo "$output" | grep -qE 'cached [0-9]{4,} workflows'
 }
 
+# --- Estimator interface (nkb estimate / nkb freshness) ---
+# The estimator reads each integration's complexity tier and applies the
+# research-waterfall rubric (standard 40 / moderate 60 / complex 80 /
+# enterprise 120), summing a total. Unknown integrations must not be priced.
+
+@test "nkb estimate: sums rubric tier hours across known integrations" {
+  run node scripts/nkb.mjs estimate salesforce athenahealth
+  [ "$status" -eq 0 ]
+  echo "$output" | grep -qE 'salesforce +moderate +60h'
+  echo "$output" | grep -qE 'athenahealth +complex +80h'
+  echo "$output" | grep -qE 'TOTAL +140h'
+}
+
+@test "nkb estimate: unknown integration is flagged with the research-waterfall gap report, not priced" {
+  run node scripts/nkb.mjs estimate zzznosuchintegrationzzz
+  [ "$status" -eq 0 ]
+  echo "$output" | grep -q 'no research record'
+  echo "$output" | grep -q 'research waterfall'
+  echo "$output" | grep -qE 'TOTAL +0h'
+}
+
+@test "nkb freshness: flags records older than 90 days at score 0.2 with an actionable gap line" {
+  run node scripts/nkb.mjs freshness
+  [ "$status" -eq 0 ]
+  # Survivor records are dated 2025-12-31 — long past the 90-day line.
+  echo "$output" | grep -qE 'salesforce\.json: research_date [0-9]+d old .*score 0\.2'
+  echo "$output" | grep -q 'run the research waterfall'
+  echo "$output" | grep -qE 'freshness: [0-9]+ of [0-9]+ dated record\(s\) stale'
+}
+
 # --- HTTP shim (nkb-serve.mjs) ---
 # Boots the server on an ephemeral port, asserts the JSON contract that the n8n
 # HTTP Request node consumes, then tears it down. Port chosen high to avoid
