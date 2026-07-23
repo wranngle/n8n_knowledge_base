@@ -1,0 +1,32 @@
+{
+  "integration": "Pipedrive",
+  "found": true,
+  "from_cache": false,
+  "from_database": true,
+  "generated": false,
+  "recovered_from": "d3a277e",
+  "research_date": "2026-07-23T00:00:00.000Z",
+  "has_native_n8n_node": true,
+  "has_native_node": true,
+  "native_node_name": "n8n-nodes-base.pipedrive",
+  "auth_type": "oauth2",
+  "api_quality": "excellent",
+  "complexity": {
+    "score": 3,
+    "tier": "moderate",
+    "estimated_hours": 60
+  },
+  "effort_recommendation": {
+    "tier": "moderate",
+    "base_hours": 60,
+    "rationale": "Native n8n node (n8n-nodes-base.pipedrive); OAuth2 or API token; the moderate cost is contact/deal matching, not the CRM writes."
+  },
+  "freshness": {
+    "stale": false,
+    "days": 0,
+    "score": 0.9,
+    "reason": "curated"
+  },
+  "_database_match": "pipedrive",
+  "_is_category": false
+}

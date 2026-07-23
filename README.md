@@ -29,15 +29,17 @@
 
 *One query in, path and line out.*
 
-n8n_knowledge_base is a catalog of 35 n8n operating docs with a single-file search CLI, `nkb`, on top. One command returns path, line, and snippet hits across hand-written workflow failure-mode patterns and per-vendor integration research records. Plain Node, one dependency, no build step.
+n8n_knowledge_base is a catalog of 47 n8n operating docs with a single-file search CLI, `nkb`, on top. One command returns path, line, and snippet hits across hand-written workflow failure-mode patterns and per-vendor integration research records. Plain Node, one dependency, no build step.
 
 ## 🔎 Features
 
 - 🔍 **Full-text search**: `nkb search "<query>"` greps the whole catalog and prints `path:line:snippet` hits; `--tag` narrows by front-matter tag.
 - 🧹 **Catalog lint**: `nkb lint` checks every failure-mode doc for required front-matter.
-- 📇 **25 integration research records**: native n8n node name, auth type, complexity tier, and estimated hours per vendor.
+- 🧮 **Labor estimate**: `nkb estimate <integration...>` sums the research-waterfall tier hours across records and flags integrations with no record; `nkb freshness` flags records past the 90-day decay line.
+- 📇 **Integration research records**: native n8n node name, auth type, complexity tier, and estimated hours per vendor. [How a record gets made](docs/research-waterfall.md) documents the research waterfall, the complexity rubric, and the tier-to-hours mapping behind those fields.
 - 🧯 **5 failure-mode pattern docs**: symptom, root cause, and workaround for real n8n and voice-agent failures, plus a community-template index.
 - 🕸️ **Standalone tooling**: dependency graph, dedupe detection, adoption stats, JSON-LD export, and an HTTP search shim ship as `node scripts/*.mjs` commands.
+- 🔭 **Search before you build**: `nkb search`, `search-community` (Zie619 corpus, ~4,343 workflows), and the n8n-MCP templates make "has someone already built this?" a query. See [Search before you build](docs/search-before-build.md).
 
 ## 🗺️ How a query flows
 
@@ -75,7 +77,7 @@ flowchart LR
 
 ```
 $ node scripts/nkb.mjs search "twilio 11200"
-workflow-patterns/twilio-11200-stream-disconnect.md:2:# Twilio Error 11200 on Media Streams...
+workflow-patterns/twilio-11200-stream-disconnect.md:5:# Twilio Error 11200 on Media Streams...
 
 $ node scripts/nkb.mjs lint
 lint ok: 6 failure-mode doc(s) checked
@@ -87,7 +89,7 @@ lint ok: 6 failure-mode doc(s) checked
 
 <table>
 <tr>
-<td align="center" width="50%"><b>Integration research</b><br/>25 vendor records, each with native n8n node, auth type, complexity tier, and estimated hours: HubSpot, Salesforce, Twilio, Slack, Shopify, Calendly, RingCentral, Google Ads, Google Calendar, Outlook, SQL, Excel, and more</td>
+<td align="center" width="50%"><b>Integration research</b><br/>27 vendor records, each with native n8n node, auth type, complexity tier, and estimated hours: HubSpot, Salesforce, Twilio, Slack, Shopify, Calendly, RingCentral, Pipedrive, athenahealth, Google Ads, Google Calendar, Outlook, SQL, Excel, and more</td>
 <td align="center" width="50%"><b>Failure-mode patterns</b><br/>webhook cold-start timeouts, cross-workflow error monitoring, Twilio Error 11200 stream disconnects, ElevenLabs tool-name collisions, voice-agent workflow patterns</td>
 </tr>
 </table>
@@ -104,9 +106,49 @@ Point `nkb search` at it and ask it anything n8n. Named vendors are catalog entr
 | `node scripts/nkb-run.mjs <slug> --sandbox` | Sandboxed pattern runner |
 | `node scripts/nkb-stats.mjs` | Adoption stats |
 | `node scripts/nkb-export.mjs --jsonld` | JSON-LD catalog export |
+| `node scripts/nkb.mjs estimate <integration...>` | Sum research-waterfall tier hours across integration records; flags gaps |
+| `node scripts/nkb.mjs freshness` | Flag research records older than 90 days at score 0.2 |
 | `node scripts/nkb-serve.mjs` | HTTP search shim on localhost |
+| `node scripts/search-community.mjs <query>` | Search the Zie619 community workflow corpus (see [Search before you build](docs/search-before-build.md)) |
 | `node scripts/build-index.mjs` | Rebuilds the search index |
 | `node scripts/lint-citations.mjs` | Citation lint |
+
+## Lineage
+
+This repository is the research and estimation half of a larger system. It has
+two ancestors.
+
+The first is the unified-presales-report product: a generator that turned a
+pasted brief into client-ready documents backed by a deterministic labor
+estimator and a FinOps engine. That code was ported to `gtm_ops` and verified by
+a 13-agent port map (`PORT_TO_GTM_OPS.md`); the pipeline and pricing engine live
+there now, not here. The knowledge base keeps the method and the records; gtm_ops
+consumes them.
+
+The second is a workflow-engineering methodology framework whose defining asset
+was a search over roughly 7,052 community workflows — the Zie619 library (4,343)
+plus the n8n-MCP template corpus (2,709). Searching those corpora before building
+was a required step. That discipline is restored in
+[docs/search-before-build.md](docs/search-before-build.md) and
+[scripts/search-community.mjs](scripts/search-community.mjs).
+
+The tree shrank on purpose. The `d3a277e` purge (2026-05-18) deleted 290 files —
+223 `generated: true` research-cache JSONs, 66 auto-generated fallback reports,
+and a 108KB SQLite research library (261 rows) — taking the repo from 386 to 97
+tracked files. The filter was right: generated cache is not curated knowledge.
+The blast radius was not: it also took two hand-curated records and the
+labor-estimation data layer, which existed nowhere else.
+
+This restoration put back what the purge should have kept: the two curated
+casualties and seven high-signal reports recovered from `d3a277e` (each tagged
+`recovered_from: d3a277e`), the research-waterfall method, the community-corpus
+search, and an `estimate` / `freshness` interface that reads the records instead
+of leaving their hour fields decorative.
+
+The raw corpora are archived off this public tree: the presales product as a git
+bundle and the private `unified-presales-report-archive` repo; the generated
+research corpus and the community-workflow corpora in the private
+`n8n-research-corpus-archive` repo.
 
 ## ⭐ Star history
 

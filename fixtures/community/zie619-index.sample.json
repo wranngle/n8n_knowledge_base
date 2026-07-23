@@ -1,0 +1,50 @@
+{
+  "source": "Zie619/n8n-workflows",
+  "branch": "main",
+  "fetched_at": "2026-07-23T00:00:00.000Z",
+  "count": 6,
+  "workflows": [
+    {
+      "id": "workflows/0042_Twilio_Voice_Webhook_Automation.json",
+      "name": "0042 Twilio Voice Webhook Automation",
+      "filename": "0042_Twilio_Voice_Webhook_Automation.json",
+      "path": "workflows/0042_Twilio_Voice_Webhook_Automation.json",
+      "url": "https://raw.githubusercontent.com/Zie619/n8n-workflows/main/workflows/0042_Twilio_Voice_Webhook_Automation.json"
+    },
+    {
+      "id": "workflows/0128_Slack_Notification_Scheduler.json",
+      "name": "0128 Slack Notification Scheduler",
+      "filename": "0128_Slack_Notification_Scheduler.json",
+      "path": "workflows/0128_Slack_Notification_Scheduler.json",
+      "url": "https://raw.githubusercontent.com/Zie619/n8n-workflows/main/workflows/0128_Slack_Notification_Scheduler.json"
+    },
+    {
+      "id": "workflows/0311_Salesforce_Lead_Enrichment.json",
+      "name": "0311 Salesforce Lead Enrichment",
+      "filename": "0311_Salesforce_Lead_Enrichment.json",
+      "path": "workflows/0311_Salesforce_Lead_Enrichment.json",
+      "url": "https://raw.githubusercontent.com/Zie619/n8n-workflows/main/workflows/0311_Salesforce_Lead_Enrichment.json"
+    },
+    {
+      "id": "workflows/0555_ElevenLabs_Voice_Agent_Callback.json",
+      "name": "0555 ElevenLabs Voice Agent Callback",
+      "filename": "0555_ElevenLabs_Voice_Agent_Callback.json",
+      "path": "workflows/0555_ElevenLabs_Voice_Agent_Callback.json",
+      "url": "https://raw.githubusercontent.com/Zie619/n8n-workflows/main/workflows/0555_ElevenLabs_Voice_Agent_Callback.json"
+    },
+    {
+      "id": "workflows/0790_HubSpot_Deal_Sync_Pipedrive.json",
+      "name": "0790 HubSpot Deal Sync Pipedrive",
+      "filename": "0790_HubSpot_Deal_Sync_Pipedrive.json",
+      "path": "workflows/0790_HubSpot_Deal_Sync_Pipedrive.json",
+      "url": "https://raw.githubusercontent.com/Zie619/n8n-workflows/main/workflows/0790_HubSpot_Deal_Sync_Pipedrive.json"
+    },
+    {
+      "id": "workflows/1024_Twilio_SMS_Appointment_Reminder.json",
+      "name": "1024 Twilio SMS Appointment Reminder",
+      "filename": "1024_Twilio_SMS_Appointment_Reminder.json",
+      "path": "workflows/1024_Twilio_SMS_Appointment_Reminder.json",
+      "url": "https://raw.githubusercontent.com/Zie619/n8n-workflows/main/workflows/1024_Twilio_SMS_Appointment_Reminder.json"
+    }
+  ]
+}

@@ -12,6 +12,11 @@ const SEARCH_EXTS = new Set([".md", ".json", ".yaml", ".yml"]);
 const SNIPPET_RADIUS = 100;
 const MAX_RESULTS = 20;
 const FAILURE_MODE_REQUIRED_HEADING = "## Why this fails";
+// Research-waterfall rubric: complexity tier -> base hours (docs/research-waterfall.md).
+const RUBRIC_TIER_HOURS = { standard: 40, moderate: 60, complex: 80, enterprise: 120 };
+const RESEARCH_DIR = join(REPO_ROOT, "technical-research");
+const FRESHNESS_MAX_DAYS = 90;
+const WATERFALL_HINT = "run the research waterfall (docs/research-waterfall.md)";
 
 async function walk(dir) {
   const out = [];
@@ -36,10 +41,10 @@ async function walk(dir) {
 
 function parseFrontMatter(text) {
   if (!text.startsWith("---\n") && !text.startsWith("---\r\n")) {
-    return { tags: [], body: text };
+    return { tags: [], body: text, lineOffset: 0 };
   }
   const end = text.indexOf("\n---", 4);
-  if (end === -1) return { tags: [], body: text };
+  if (end === -1) return { tags: [], body: text, lineOffset: 0 };
   const block = text.slice(4, end);
   const tags = [];
   const tagLine = block.match(/^tags:\s*(.+)$/m);
@@ -57,7 +62,12 @@ function parseFrontMatter(text) {
   }
   const flowEnd = end + 4;
   const after = text[flowEnd] === "\n" ? flowEnd + 1 : flowEnd;
-  return { tags, body: text.slice(after) };
+  // Front matter is dropped from `body`, so any line number computed against
+  // `body` runs short by the number of lines the front matter occupied. Count
+  // those stripped lines here and add the offset back wherever a file line is
+  // reported (snippetFor, tag listing), so `path:line:` points at the real file.
+  const lineOffset = text.slice(0, after).split("\n").length - 1;
+  return { tags, body: text.slice(after), lineOffset };
 }
 
 async function loadDocs() {
@@ -69,9 +79,9 @@ async function loadDocs() {
     for (const file of files) {
       try {
         const raw = await readFile(file, "utf8");
-        const { tags, body } = parseFrontMatter(raw);
+        const { tags, body, lineOffset } = parseFrontMatter(raw);
         const path = relative(REPO_ROOT, file);
-        docs.push({ id: path, path, text: body, tags, tagsText: tags.join(" ") });
+        docs.push({ id: path, path, text: body, tags, tagsText: tags.join(" "), lineOffset });
       } catch {
         // skip unreadable
       }
@@ -83,14 +93,14 @@ async function loadDocs() {
 function buildIndex(docs) {
   const idx = new MiniSearch({
     fields: ["path", "text", "tagsText"],
-    storeFields: ["path", "text", "tags"],
+    storeFields: ["path", "text", "tags", "lineOffset"],
     searchOptions: { boost: { path: 2 }, prefix: true, fuzzy: 0.1 },
   });
   idx.addAll(docs);
   return idx;
 }
 
-function snippetFor(text, query) {
+function snippetFor(text, query, lineOffset = 0) {
   const haystack = text.toLowerCase();
   const tokens = query.toLowerCase().split(/\s+/).filter(Boolean);
   let hit = -1;
@@ -101,7 +111,7 @@ function snippetFor(text, query) {
   if (hit === -1) hit = 0;
   const start = Math.max(0, hit - SNIPPET_RADIUS);
   const end = Math.min(text.length, hit + SNIPPET_RADIUS);
-  const line = text.slice(0, hit).split("\n").length;
+  const line = lineOffset + text.slice(0, hit).split("\n").length;
   return {
     line,
     snippet: text.slice(start, end).replace(/\s+/g, " ").trim(),
@@ -127,8 +137,11 @@ async function runSearch(rest) {
   if (flags.tag && !query) {
     const hits = docs.filter((d) => d.tags.includes(flags.tag));
     for (const d of hits) {
-      const firstLine = d.text.split("\n").find((l) => l.trim().length > 0) || "";
-      process.stdout.write(`${d.path}:1:[tags=${d.tags.join(",")}] ${firstLine.slice(0, 160).trim()}\n`);
+      const lines = d.text.split("\n");
+      const idx = lines.findIndex((l) => l.trim().length > 0);
+      const firstLine = idx === -1 ? "" : lines[idx];
+      const line = d.lineOffset + (idx === -1 ? 1 : idx + 1);
+      process.stdout.write(`${d.path}:${line}:[tags=${d.tags.join(",")}] ${firstLine.slice(0, 160).trim()}\n`);
     }
     return;
   }
@@ -143,7 +156,7 @@ async function runSearch(rest) {
   const results = idx.search(query, { combineWith: "AND" }).slice(0, MAX_RESULTS);
   if (results.length === 0) return;
   for (const r of results) {
-    const { line, snippet } = snippetFor(r.text, query);
+    const { line, snippet } = snippetFor(r.text, query, r.lineOffset);
     process.stdout.write(`${r.path}:${line}:${snippet}\n`);
   }
 }
@@ -165,14 +178,128 @@ async function runLint() {
   process.stdout.write(`lint ok: ${tagged} failure-mode doc(s) checked\n`);
 }
 
+async function loadJsonRecords() {
+  const out = [];
+  let files;
+  try { files = await readdir(RESEARCH_DIR); } catch { return out; }
+  for (const name of files) {
+    if (!name.endsWith(".json")) continue;
+    try {
+      const rec = JSON.parse(await readFile(join(RESEARCH_DIR, name), "utf8"));
+      out.push({
+        slug: name.replace(/\.json$/, ""),
+        integration: rec.integration ?? null,
+        dbMatch: rec._database_match ?? null,
+        tier: rec.complexity?.tier ?? rec.effort_recommendation?.tier ?? null,
+        estimatedHours: rec.complexity?.estimated_hours ?? rec.effort_recommendation?.base_hours ?? null,
+      });
+    } catch {
+      // skip unparseable record
+    }
+  }
+  return out;
+}
+
+function matchRecord(records, name) {
+  const q = name.toLowerCase();
+  const eq = (v) => v && v.toLowerCase() === q;
+  const has = (v) => v && v.toLowerCase().includes(q);
+  return (
+    records.find((r) => eq(r.slug) || eq(r.integration) || eq(r.dbMatch)) ||
+    records.find((r) => has(r.slug) || has(r.integration) || has(r.dbMatch)) ||
+    null
+  );
+}
+
+async function runEstimate(rest) {
+  const names = rest.filter((a) => !a.startsWith("-"));
+  if (names.length === 0) {
+    process.stderr.write("usage: nkb estimate <integration> [<integration>...]\n");
+    process.exit(2);
+  }
+  const records = await loadJsonRecords();
+  const lines = [];
+  const gaps = [];
+  let total = 0;
+  for (const name of names) {
+    const rec = matchRecord(records, name);
+    if (!rec || !rec.tier) {
+      gaps.push(name);
+      lines.push(`  ${name.padEnd(22)} —          no research record — ${WATERFALL_HINT}`);
+      continue;
+    }
+    const hours = RUBRIC_TIER_HOURS[rec.tier];
+    if (hours === undefined) {
+      lines.push(`  ${name.padEnd(22)} ${rec.tier.padEnd(10)} not a build tier — skipped`);
+      continue;
+    }
+    total += hours;
+    const note = rec.estimatedHours != null && rec.estimatedHours !== hours ? ` (record notes ${rec.estimatedHours}h)` : "";
+    lines.push(`  ${name.padEnd(22)} ${rec.tier.padEnd(10)} ${hours}h${note}`);
+  }
+  process.stdout.write("estimate — rubric tier hours (docs/research-waterfall.md):\n");
+  for (const l of lines) process.stdout.write(l + "\n");
+  process.stdout.write(`  ${"TOTAL".padEnd(22)} ${"".padEnd(10)} ${total}h across ${names.length - gaps.length} known integration(s)\n`);
+  if (gaps.length > 0) {
+    process.stdout.write(`  ${gaps.length} unknown: ${gaps.join(", ")}\n`);
+  }
+}
+
+async function loadDatedRecords() {
+  const out = [];
+  let files;
+  try { files = await readdir(RESEARCH_DIR); } catch { return out; }
+  for (const name of files) {
+    const full = join(RESEARCH_DIR, name);
+    let researchDate = null;
+    if (name.endsWith(".json")) {
+      try { researchDate = JSON.parse(await readFile(full, "utf8")).research_date ?? null; } catch { continue; }
+    } else if (name.endsWith(".md")) {
+      try {
+        const m = (await readFile(full, "utf8")).match(/^research_date:\s*(.+)$/m);
+        researchDate = m ? m[1].trim() : null;
+      } catch { continue; }
+    } else {
+      continue;
+    }
+    if (researchDate) out.push({ path: `technical-research/${name}`, researchDate });
+  }
+  return out;
+}
+
+async function runFreshness() {
+  const records = await loadDatedRecords();
+  const now = Date.now();
+  const stale = [];
+  for (const r of records) {
+    const t = Date.parse(r.researchDate);
+    if (Number.isNaN(t)) continue;
+    const days = Math.floor((now - t) / 86_400_000);
+    if (days > FRESHNESS_MAX_DAYS) stale.push({ ...r, days });
+  }
+  if (stale.length === 0) {
+    process.stdout.write(`freshness ok: ${records.length} dated record(s), none older than ${FRESHNESS_MAX_DAYS}d\n`);
+    return;
+  }
+  stale.sort((a, b) => b.days - a.days);
+  for (const s of stale) {
+    process.stdout.write(`${s.path}: research_date ${s.days}d old (>${FRESHNESS_MAX_DAYS}d) — score 0.2 — ${WATERFALL_HINT}\n`);
+  }
+  process.stdout.write(`\nfreshness: ${stale.length} of ${records.length} dated record(s) stale\n`);
+}
+
 const [, , subcommand, ...rest] = process.argv;
 
 if (subcommand === "search") {
   await runSearch(rest);
 } else if (subcommand === "lint") {
   await runLint();
+} else if (subcommand === "estimate") {
+  await runEstimate(rest);
+} else if (subcommand === "freshness") {
+  await runFreshness();
 } else if (!subcommand || subcommand === "--help" || subcommand === "-h") {
-  process.stdout.write("nkb — local full-text search over the n8n knowledge base\n\nusage:\n  nkb search [--tag <name>] <query>\n  nkb search --tag <name>\n  nkb lint\n");
+  process.stdout.write("nkb — local search + estimation over the n8n knowledge base\n\nusage:\n  nkb search [--tag <name>] <query>\n  nkb search --tag <name>\n  nkb lint\n  nkb estimate <integration> [<integration>...]\n  nkb freshness\n");
 } else {
   process.stderr.write(`nkb: unknown subcommand "${subcommand}"\n`);
   process.exit(2);

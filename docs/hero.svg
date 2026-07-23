@@ -38,7 +38,7 @@
   </foreignObject>
 
   <g class="reveal o1">
-    <text x="24" y="94"><tspan class="path">workflow-patterns/twilio-11200-stream-disconnect.md</tspan><tspan class="line-no">:2:</tspan></text>
+    <text x="24" y="94"><tspan class="path">workflow-patterns/twilio-11200-stream-disconnect.md</tspan><tspan class="line-no">:5:</tspan></text>
     <text x="40" y="112" class="snippet"># Twilio Error 11200 on Media Streams &gt; Pattern: voice-agent calls die mid-conversation…</text>
   </g>
 
@@ -48,7 +48,7 @@
   </foreignObject>
 
   <g class="reveal o2">
-    <text x="24" y="180"><tspan class="path">workflow-patterns/n8n-webhook-cold-start-timeout.md</tspan><tspan class="line-no">:2:</tspan></text>
+    <text x="24" y="180"><tspan class="path">workflow-patterns/n8n-webhook-cold-start-timeout.md</tspan><tspan class="line-no">:5:</tspan></text>
     <text x="40" y="198" class="snippet"># n8n Webhook Cold-Start Timeout on Voice-Triggered Workflows &gt; Pattern: voice agents…</text>
   </g>
   <g class="reveal o3">
@@ -56,7 +56,7 @@
     <text x="40" y="240" class="snippet">{ "id": 2846, "name": "AI Voice Chatbot with ElevenLabs &amp; OpenAI", "pattern": "webhook-rag…</text>
   </g>
   <g class="reveal o4">
-    <text x="24" y="264"><tspan class="path">workflow-patterns/voice-agent-elevenlabs-patterns.md</tspan><tspan class="line-no">:26:</tspan></text>
+    <text x="24" y="264"><tspan class="path">workflow-patterns/voice-agent-elevenlabs-patterns.md</tspan><tspan class="line-no">:29:</tspan></text>
     <text x="40" y="282" class="snippet">| 2846 | AI Voice Chatbot with ElevenLabs &amp; OpenAI | Webhook + RAG + Vector Store |…</text>
   </g>
   <g class="reveal o5">
