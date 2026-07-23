@@ -78,6 +78,39 @@ setup() {
   [ "$reported" -ne 1 ]
 }
 
+# --- Community corpus search (search-community.mjs, offline via fixture) ---
+# Network is never touched: the fixture index stands in for the cached Zie619
+# file list. A real --refresh against GitHub is only exercised when NKB_NET_TESTS=1.
+
+COMMUNITY_FIXTURE="fixtures/community/zie619-index.sample.json"
+
+@test "search-community: keyword 'twilio' returns matching community workflows with URLs" {
+  run node scripts/search-community.mjs twilio --index "$COMMUNITY_FIXTURE"
+  [ "$status" -eq 0 ]
+  count="$(echo "$output" | grep -cE 'https://raw\.githubusercontent\.com/Zie619/n8n-workflows/')"
+  [ "$count" -ge 2 ]
+  echo "$output" | grep -qi 'twilio'
+}
+
+@test "search-community: unmatched keyword reports zero, does not fabricate hits" {
+  run node scripts/search-community.mjs zzznotacorpusworkflowzzz --index "$COMMUNITY_FIXTURE"
+  [ "$status" -eq 0 ]
+  echo "$output" | grep -q 'no community workflows match'
+}
+
+@test "search-community: missing index exits non-zero with a refresh hint, not a stack trace" {
+  NKB_COMMUNITY_INDEX="/nonexistent/index.json" run node scripts/search-community.mjs twilio
+  [ "$status" -ne 0 ]
+  echo "$output" | grep -q -- '--refresh'
+}
+
+@test "search-community: real Zie619 refresh caches >1000 workflows (network; NKB_NET_TESTS=1)" {
+  [ "${NKB_NET_TESTS:-0}" = "1" ] || skip "network test; set NKB_NET_TESTS=1 to run"
+  run node scripts/search-community.mjs --refresh
+  [ "$status" -eq 0 ]
+  echo "$output" | grep -qE 'cached [0-9]{4,} workflows'
+}
+
 # --- HTTP shim (nkb-serve.mjs) ---
 # Boots the server on an ephemeral port, asserts the JSON contract that the n8n
 # HTTP Request node consumes, then tears it down. Port chosen high to avoid
